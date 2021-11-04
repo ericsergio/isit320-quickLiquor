@@ -1,0 +1,50 @@
+		$tbls = ["items", "dists", "order_units", "ordered", "unit_quantity"];
+		$index = $idx - 1;
+		$table = $tbls[$index];
+		$sql_change_num = 1;
+		foreach($changeArr as $current) {
+			echo "\nsql_change_query" . $sql_change_num . " = UPDATE $table SET " . str_replace(":", "=", $current) . " WHERE " . "i_name = " . $originalname . "\n";
+			$sql_change_num += 1;
+			
+		}
+
+
+        -------------------
+
+
+
+
+        	public function updateItem($idx, $originalname, $changeArr) {
+		$tbls = ["items", "dists", "order_units", "ordered", "unit_quantity"];
+		$index = $idx - 1;
+		$table = $tbls[$index];
+		$sql_change_num = 1;
+		$queries = [];
+		foreach($changeArr as $current) {
+			$query_name = "\nsql_change_query" . $sql_change_num;
+			$change_field = str_replace(':', '=', $current);
+			$query = "$query_name = UPDATE $table SET $change_field WHERE i_name = '$originalname'";
+			array_push($queries, $query);
+			$sql_change_num += 1;
+		}
+		$query_count = count($queries);
+		$stop_cursor = $query_count - 1;
+		try {
+			$this->pdo->beginTransaction();
+			for($i = 0;$i < $query_count; $i++) {
+				echo $queries[$i];
+				$stmt = $this->pdo->prepare($queries[$i]);
+				$stmt->execute();
+				if($i !== $stop_cursor) {
+					$stmt->closeCursor();
+				}
+			}
+			$this->pdo->commit();
+			return true;
+		} catch(PDOException $e) {
+			$this->pdo->rollback();
+			die($e->getMessage());
+			echo $e->getMessage();
+		}
+	}
+}
