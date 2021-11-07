@@ -108,6 +108,9 @@ $(document).ready(function () {
 					if(purposeIdx === 0) {
 						var postPath = "pages/fn.php";
 					} else {
+						//because both managedb.html and index.html use this the relative path is different based on the 
+						//purpose its being used for. It should use the below path if this is being used from managedb.html 
+						//above if index.html
 						var postPath = "fn.php";
 					}
 				}
