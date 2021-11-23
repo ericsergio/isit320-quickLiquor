@@ -4,7 +4,7 @@ ISIT320 Advanced Web Application Development Course Project - 5 Guys | Quick Liq
 
 
 
-IMPORTANT: To build this project you must temporarily hardcode the user name and password in fn.php. This is clearly not ideal and will be fixed, the project is still set up to use the config file in the pages directory but at the time I'm writing this I think one of the MySQL version updates caused the PDO connection string to throw an access error. The machine I originally wrote this on works using the config file but every other new installation has produced this error. Until I find out why, hardcoding the user name and password for testing should suffice. In fn.php, the line : $this->pdo = new PDO($conStr, $user, $pass); needs to be replaced with $this->pdo = new PDO($conStr, <user>, <password>);
+IMPORTANT: To build this project you must temporarily hardcode the user name and password in fn.php. This is clearly not ideal and will be fixed, the project is still set up to use the config file in the pages directory but at the time I'm writing this I think one of the MySQL version updates caused the PDO connection string to throw an access error. The machine I originally wrote this on works using the config file but every other new installation has produced this error. Until I find out why, hardcoding the user name and password for testing should suffice. In fn.php, the line : $this->pdo = new PDO($conStr, $user, $pass); needs to be replaced with $this->pdo = new PDO($conStr, your user name, your mysql user password);
 
   
   
