@@ -125,7 +125,7 @@ class Booz {
 	public function displayTableForEdit($idx) {
 		try {
 			$idx = $idx - 1;
-			$sql_manageable_tables = ["SELECT * from i_Details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
+			$sql_manageable_tables = ["SELECT * from i_details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
 			//$this->pdo->beginTransaction();
 			$stmt = $this->pdo->prepare($sql_manageable_tables[$idx]);
 			$stmt->execute();
