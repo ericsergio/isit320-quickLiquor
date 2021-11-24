@@ -1,27 +1,5 @@
 
-/*
-Mr. or Ms. API this is my question.
 
-do you have     2                  cases           of   750ml      bottles of     skoll vodka      available?
-i know the id if that helps you check.
-
-
-do you have  this.orderquantity     this.orderUnit  of   this.unit  bottles of     this.name        available? 
-you can use     this.id      to help check
-
-
-
-======================= No not above because the api databases have a different sku number for each variance of an item 
-by type etc... all i need to provide mr. or ms api is the id and quantity but I am leaving that there just in case. It should look
-like this:
-
-Mr. or Ms API, do you happen to have this.orderQuantity of this.sku available?
-
-So the Order object will contain data to specify who to ask and how many questions we have. The next object really should only 
-have the order context id the sku of the item and how many of the item are needed.
-
-
-*/
 
 
 function Order(dist, count) {
