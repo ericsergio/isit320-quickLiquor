@@ -1,0 +1,91 @@
+.updateWrapper{
+    position:fixed;
+    top:28%;
+    left:35%;
+    height:54%;
+    width: 40%;
+    /*border:solid blue 2px;*/
+    /*background-color: rgb(4, 7, 59);*/
+    background-color:#1f4a5e;
+    box-shadow: 0px 20px 35px 10px #000000;
+    color:#ffffff;
+    visibility: hidden;
+    z-index: 4;
+}
+
+tfoot tr td{
+    font-size:280px;
+    color: #ffffff;
+}
+
+ul.keyValList {
+    display: grid;
+    grid-template-columns: 45% 45%;
+    list-style-type: none;
+    line-height: 1.65em;
+    /*box-shadow: inset 0px 0px 35px 2px #1f4a5e;*/
+}
+ul.keyValList li {
+    border-bottom:solid yellow 1px;
+}
+.updateBtn {
+    display:grid;
+    grid-template-columns: 45% 45%;
+    grid-gap:5%;
+    width:100%;
+    margin:0 10% 3% 10%;
+    height:25px;
+}
+
+#confirmItem, #cancelItem{
+    width: 100px;
+    background-color: #a5cad8;
+	box-shadow: 0px 10px 35px 2px #38475c;
+    color:#0e0b42;
+    border-radius:35%;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-variant: small-caps;
+    font-size: large;
+}
+
+#field_distributers, #field_types, #field_d_types, #field_q_types {
+    position: fixed;;
+}
+
+#filterList {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin:0% 5% 3% 5%;
+    width:100%;
+    list-style-type: none;
+}
+
+select, #nameFilter_Input {
+    height:35px;
+    width:155px;
+    color:#000000;
+    background-color: #e0ffff;
+    box-shadow: inset 0px 0px 35px 2px #1f4a5e;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: medium;
+}
+
+select {
+    cursor:context-menu;
+}
+
+.resultWrapper #resultTable {
+    box-shadow: inset 0px 0px 35px 2px #1f4a5e;
+}
+
+.itemRow {
+    cursor:pointer;
+}
+
+li[id*="_"] {
+    cursor:pointer;
+}
+
+input[type="button"] {
+    cursor:pointer;
+}

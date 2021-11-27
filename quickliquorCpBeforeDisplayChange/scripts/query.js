@@ -1,7 +1,3 @@
-
-
-
-
 function Order(dist, count) {
     this.dist = dist;
     this.count = count || null;
@@ -15,7 +11,6 @@ function OrderItem(id, name, orderQuantity, unit, orderUnit) {
     this.orderUnit = orderUnit;
 }
 
-
 //this function is placed as event listener on div#distWrapper ul#distList li children. The param "that" refers to 
 //this which has the context of that element. the variable dist below is taking the last 2 characters of the li id 
 //to eventually provide the property "dist" above in the Order constructer once the button gets clicked. 
@@ -26,12 +21,9 @@ function OrderItem(id, name, orderQuantity, unit, orderUnit) {
 //finish its execution. In apiQueryCheck the Order object will be created with the distributer and the order item count. 
 function placeControls(that){
     let dist = $(that).attr('id').substr($(that).attr('id').length - 2);
-    //console.log($('#orderTable'));
-    
-    $('.results').before(`<button id = "checkOrder" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
+    $(`${that}`).addClass('doublecheck')
+    //$('.results').before(`<button id = "checkOrder" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
     $('.results').before('<button id = "sendOrder">Send Order</button>');
-    
-    
 }
 
 
@@ -39,7 +31,6 @@ function apiQueryCheckSetup(dist) {
     console.log(dist);
     console.log($('#count').text());
     Order.order = new Order(`${dist}`, $('#count').text());
-
 }
 
 function apiQuery(){
