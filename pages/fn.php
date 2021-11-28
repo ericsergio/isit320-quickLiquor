@@ -330,7 +330,7 @@ class Booz {
 		try {
 			$this->pdo->beginTransaction();
 			$sql = "call itemOrderedInfo('$item_name');";
-			echo $sql;
+			//echo $sql;
 			$stmt = $this->pdo->prepare($sql);
 			//$stmt->bindParam(':item_name', $item_name, PDO::PARAM_STR);
 			$stmt->execute();
@@ -348,20 +348,36 @@ class Booz {
 				$sql_field_type = $result->Item_Type;
 				$sql_field_on_hand = $result->On_Hand;
 				echo "
-				<div class = 'orderHistorySqlView'>
-					<p id = 'selectedItem'>$sql_field_name</p>
-					<p id = 'bottleQuantity'>$sql_field_bottle_quantity</p>
-					<p id = 'caseQuantity'>$sql_field_case_quantity</p>
-					<p id = 'totalQuantity'>$sql_field_total_quantity</p>
-					<p id = 'dateStart'>$sql_field_datestart</p>
-					<p id = 'dateEnd'>$sql_field_dateend</p>
-					<p id = 'dateFirst'>$sql_field_days_first_order</p>
-					<p id = 'perDay'>$sql_field_per_day</p>
-					<p id = 'perUnit'>$sql_field_per_unit</p>
-					<p id = 'itemPar'>$sql_field_par</p>
-					<p id = 'itemType'>$sql_field_type</p>
-					<p id = 'itemOnHand'>$sql_field_on_hand</p>
-				</div>";
+				<table class= 'orderHistorySqlView'>
+  					<tr>
+						<th>Name</th>
+						<th>bottleQuantity</th>
+						<th>Case_Quantity</th>
+						<th>total_quantity</th>
+						<th>dateStart</th>
+						<th>dateEnd</th>
+						<th>days_first_order</th>
+						<th>perDay</th>
+						<th>perUnit</th>
+						<th>Par</th>
+						<th>type</th>
+						<th>on_hand</th>
+  					</tr>
+  					<tr>
+    					<td>$sql_field_name</td>
+						<td>$sql_field_bottle_quantity</td>
+						<td>$sql_field_case_quantity</td>
+						<td>$sql_field_total_quantity</td>
+						<td>$sql_field_datestart</td>
+						<td>$sql_field_dateend</td>
+						<td>$sql_field_days_first_order</td>
+						<td>$sql_field_per_day</td>
+						<td>$sql_field_per_unit</td>
+						<td>$sql_field_par</td>
+						<td>$sql_field_type</td>
+						<td>$sql_field_on_hand</td>
+					</tr>
+				</table>";
 			}
 			$stmt->closeCursor();
 			$this->pdo->commit();
