@@ -339,41 +339,44 @@ class Booz {
 				$sql_field_bottle_quantity = $result->Bottle_Quantity;
 				$sql_field_case_quantity = $result->Case_Quantity;
 				$sql_field_total_quantity = $result->Total;
-				$sql_field_datestart = $result->Date_Start;
-				$sql_field_dateend = $result->Date_End;
+				$sql_field_datestart = date_format(date_create($result->Date_Start),'Y-m-d');
+				$sql_field_dateend = date_format(date_create($result->Date_End),'Y-m-d');
 				$sql_field_days_first_order = $result->Days_Since_First_Order;
 				$sql_field_per_day = $result->Per_Day_Rate;
 				$sql_field_per_unit = $result->Per_Unit_Rate;
 				$sql_field_par = $result->Item_Par;
 				$sql_field_type = $result->Item_Type;
 				$sql_field_on_hand = $result->On_Hand;
-				echo "
-				<table class= 'orderHistorySqlView'>
-  					<tr>
-						<th>Name</th>
+				echo "<table id='resultTable'>
+				<thead class='resultHead'>
+					<tr>
+						<th class='col1'>Name</th>
 						<th>bottleQuantity</th>
 						<th>Case_Quantity</th>
 						<th>total_quantity</th>
 						<th>dateStart</th>
 						<th>dateEnd</th>
-						<th>days_first_order</th>
+						<th>days_since_first_order</th>
 						<th>perDay</th>
 						<th>perUnit</th>
 						<th>Par</th>
 						<th>type</th>
 						<th>on_hand</th>
-  					</tr>
-  					<tr>
-    					<td>$sql_field_name</td>
-						<td>$sql_field_bottle_quantity</td>
-						<td>$sql_field_case_quantity</td>
-						<td>$sql_field_total_quantity</td>
-						<td>$sql_field_datestart</td>
-						<td>$sql_field_dateend</td>
-						<td>$sql_field_days_first_order</td>
-						<td>$sql_field_per_day</td>
-						<td>$sql_field_per_unit</td>
-						<td>$sql_field_par</td>
+					</tr>
+				<thead/>";
+				
+				echo "
+					<tr class='itemRow'>
+							<td class='col1'>$sql_field_name</td>
+							<td>$sql_field_bottle_quantity</td>
+							<td>$sql_field_case_quantity</td>
+							<td>$sql_field_total_quantity</td>
+							<td>$sql_field_datestart</td>
+							<td>$sql_field_dateend</td>
+							<td>$sql_field_days_first_order</td>
+							<td>$sql_field_per_day</td>
+							<td>$sql_field_per_unit</td>
+							<td>$sql_field_par</td>
 						<td>$sql_field_type</td>
 						<td>$sql_field_on_hand</td>
 					</tr>

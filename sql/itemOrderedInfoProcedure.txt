@@ -1,0 +1,83 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
+begin
+declare bottle_order_quantity int;
+declare case_order_quantity int;
+declare total int;
+declare min_order_date int;
+declare max_order_date int;
+declare min_order_date_standard int;
+declare max_order_date_standard int;
+declare case_quantity int;
+declare days_since_1st_order int;
+declare per_day_rate decimal(4,2);
+declare per_unit_rate decimal(4,2);
+declare item_par int;
+declare item_type int;
+declare item_on_hand int;
+
+select sum(o_quantity) into bottle_order_quantity
+from ordered
+where o_name = o_name_param and o_unit = 'Bottle';
+
+select sum(o_quantity) into case_order_quantity
+from ordered
+where o_name = o_name_param and o_unit = 'Case';
+
+select unix_timestamp(min(o_date)) into min_order_date from ordered where o_name = o_name_param;
+select unix_timestamp(max(o_date)) into max_order_date from ordered where o_name = o_name_param;
+
+select min(o_date) into min_order_date_standard from ordered where o_name = o_name_param;
+select max(o_date) into max_order_date_standard from ordered where o_name = o_name_param;
+
+if case_order_quantity is null then
+set case_order_quantity = 0;
+end if;
+
+if bottle_order_quantity is null then
+set bottle_order_quantity = 0;
+end if;
+
+select items.i_par, items.i_type, items.on_hand into item_par, item_type, item_on_hand
+from items
+where o_name_param = items.i_name;
+
+
+
+if item_type <= 2 then
+set case_quantity = 12;
+set total = (case_order_quantity * case_quantity) + bottle_order_quantity;
+elseif item_type > 2 then
+set case_quantity = 24;
+set total = case_quantity * case_order_quantity;
+end if;
+
+if o_name_param = 'Moonshine' then
+set case_quantity = 8;
+set total = ((case_order_quantity * case_quantity) + bottle_order_quantity) * .75;
+end if;
+
+if o_name_param = 'Royal_Gentleman_Whiskey' then
+set total = ((case_order_quantity * case_quantity) + bottle_order_quantity) * .75;
+end if;
+
+set days_since_1st_order = (max_order_date - min_order_date) / 60 / 60 / 24;
+
+set per_day_rate = total / days_since_1st_order;
+
+set per_unit_rate = 1 / per_day_rate;
+
+select o_name_param as 'Item_Name',
+bottle_order_quantity as 'Bottle_Quantity',
+case_order_quantity as 'Case_Quantity',
+total as 'Total',
+min_order_date as 'Date_Start_Unix',
+max_order_date as 'Date_End_Unix',
+min_order_date_standard as 'Date_Start',
+max_order_date_standard as 'Date_End',
+days_since_1st_order as 'Days_Since_First_Order',
+per_day_rate as 'Per_Day_Rate',
+per_unit_rate as 'Per_Unit_Rate',
+item_par as 'Item_Par',
+item_type as 'Item_Type',
+item_on_hand as 'On_Hand';
+end
