@@ -389,7 +389,7 @@ function confirmChange() {
 		//Need to display error here if one occurs via alert or something
 		console.log("ajax response : " + data);
 	});
-	$('div.updateWrapper').css("visibility", "hidden");
+	$('div.updateWrapper').css("visibility", "hidden");	
 	$('.resultWrapper').show();
 	$('#filterList').show();
 	$('.selected').show();

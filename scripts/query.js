@@ -44,13 +44,16 @@ function apiQueryCheckSetup(dist) {
         for (let n = 0;n < 6; n++){
             vars[n] = $('#orderTable').find('tr')[i].children[n].innerHTML
         }
+        //These next 4 variables create the exact string that is in the name field of the distributer's API. Originally,
+        //I planned to use the name to query the OrderItems but later changed it to query the Order items based on
+        //their numeric Inventory id.
         let unitTypeStr = vars[3].replace("1 Liter", "_1L").replace("750 ml", "_750ml").replace("187 ml","_187ml").replace("Can","_Can");
         let isCase = vars[2] === 'Case';
         let searchString = `${vars[0]}${unitTypeStr}`
         let searchStr = isCase ? `${searchString}_case` : `${searchString}`;
-        //console.log(searchStr);
         //make sure searchStr is what goes in the last param, not searchString.
         OrderItem[[itemVar]] = new OrderItem(i, vars[5], vars[0], vars[1], vars[2], vars[3], searchStr);
+        //Items is an array that gets populated with the Inventory ids which will later get appended to the end of the URL 
         Items.push(OrderItem[[itemVar]].inventoryId);
         console.log(OrderItem[[itemVar]]);
     }
@@ -84,74 +87,15 @@ function apiQuery(){
             let o = JSON.stringify(data);
             let newO = new Object(data);
             let oItems = o.split(',');
-            $(".testResult").append(`<p class = 'data'>${oItems[0]} | ${oItems[2]}</p>`);
-            //$(".testResult").append(`<p class = 'data'>${JSON.stringify(data)}</p>`);
-            //$(".testResult").append(JSON.stringify(data) + "\n");
+            //$(".testResult").append(`<p class = 'data'>${oItems[0]} | ${oItems[2]} | ${oItems[3]} | ${oItems[4]}</p>`);
+            //$(".testResult").append(`<p class = 'data'>${oItems[0]} | ${oItems[2]}</p>`);
+            $(".testResult").append(`<p class = 'data'>${JSON.stringify(data)}</p>`);
             
-            //$(".testResult").css[{'height':'400px'}]
+            //$(".testResult").append(JSON.stringify(data) + "\n");
         })
     }
 }
-    //$.get("http://localhost:3000/getitems/102   ", function(data) {
-      //  let o = JSON.stringify(data);
-       // let oItems = o.split(',');
-        /*for (p in oItems) {
-            console.log(oItems[p])
-        }*/
-        //console.log(data);
-        //console.log(o.length);
-        //console.log(o[2]);
-        //console.log(typeof data);
-        //console.log(JSON.stringify(data));    
-        //$(".testResult").text(JSON.stringify(data));
-        //alert(JSON.stringify(data));
-  //      postProcessedData();
-    //});
-
-//function postProcessedData() {
-    //http://localhost:3000
-    //let obj = OrderItem.item1.search();
-    //$.post("http://localhost:3000/data.php", {obj})
-
-    //$.post("data.php", {name:OrderItem.item1.search().search})
-    //.done(function(data) {
-    //    console.log("ajax response : " + data);
-    //})
-//}
 
 
-/******************************************
-      $.post("fn.php", {idx: idx, purpose: purpose, originalname: origName, changeArr: changes})
-      .done(function(data) {
-          //Need to display error here if one occurs via alert or something
-          console.log("ajax response : " + data);
-      });
-
-**************************************************/
-
-//This works - back up
-/*
-function apiQueryCheckSetup(dist) {
-    console.log(dist);
-    console.log($('#count').text());
-    const itemCount = Number($('#count').text()) - 1;
-    Order.order = new Order(`${dist}`, itemCount);
-    for(var i = 1;i<=itemCount;i++) {
-        const itemVar = 'item' + i;
-        let itemName = $('#orderTable').find('tr')[i].children[0].innerHTML;
-        let itemQuantity = $('#orderTable').find('tr')[i].children[1].innerHTML;
-        let itemUnit = $('#orderTable').find('tr')[i].children[2].innerHTML;
-        let itemUnitType = $('#orderTable').find('tr')[i].children[3].innerHTML;
-        let unitTypeStr = itemUnitType.replace("1 Liter", "_1L").replace("750 ml", "_750ml").replace("187 ml","_187ml").replace("Can","_Can");
-        let isCase = itemUnit === 'Case';
-        let searchString = `${itemName}${unitTypeStr}`
-        let searchStr = isCase ? `${searchString}_case` : `${searchString}`;
-        console.log(searchStr);
-        //make sure searchStr is what goes in the last param, not searchString.
-        OrderItem[[itemVar]] = new OrderItem(i, itemName, itemQuantity, itemUnit, itemUnitType, searchStr);
-        console.log(OrderItem[[itemVar]]);
-    }
-}
-*/
 
 
