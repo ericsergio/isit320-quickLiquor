@@ -93,7 +93,8 @@ function doTotal() {
             let oItems = o.split(':');
             let total = oItems[1].replace(/"}]/gi,'').replace(/"/gi,'');
             console.log(total);
-            $('.itemized').before(`<h3 id = 'InvoiceTotal'>$${total}</h3>`);
+            $('.itemized').before(`<h2 id = 'totalLbl'>Invoice Total</h2><h3 id = 'InvoiceTotal'>$${total}</h3>`);
+            
         })
     },800);
 }
@@ -106,7 +107,7 @@ function sendOrder() {
         $.get(urlItems[p], function(data) {
             var o = JSON.stringify(data);
             let oItems = o.split(',');
-            var name = oItems[2].substring(7).replace(/":\\"/gi,'').replace(/\\"/gi,'');
+            var name = oItems[2].substring(7).replace(/":\\"/gi,'').replace(/\\"/gi,'').replace(/_/gi, ' ');
             var price = Number(oItems[3].substring(8).replace(/:\\"/gi, '').replace(/\\"/gi,'').replace(/"/gi,''));
             console.log(o);
             //$(".testResult").html(`<p class = 'data'>${oItems[0]}</p>`);
@@ -118,6 +119,7 @@ function sendOrder() {
             //$(".testResult").append(JSON.stringify(data) + "\n");
         })
     }
+    $(".itemized").before(`<h2>Your Itemized Invoice:</h2>`);
 }
 
 function doHideMsg() {
@@ -129,6 +131,33 @@ function doButtons() {
     $('.itemized').before(`<button id = "OkBtn" onclick = "doHideMsg()">OK</button>`);
 }
 
+function doOutOfStockItems() {
+       //setTimeout is needed to ensure all the requests finish before the total is retrieved
+       setTimeout(function() {
+        $.get('http://localhost:3000/outofstock', function(data) {
+            let o = JSON.stringify(data);
+            let oItems = o.split(',');
+            $('.outOfStock ul').before(`<h2>Items Not Currently In Stock:</h2>`);
+            for(var i=2;i<oItems.length;i+=3) {
+                $('.outOfStock ul').append(`<li>${oItems[i].slice(12,-2).replace(/"/gi,'').replace(/_/gi, ' ')}</li>`);
+                //console.log(oItems[i]);
+            }
+            //$('.outOfStock ul').append(`<li></li>`);
+        })
+    },1500);
+}
+
+function doInStockItems() {
+    //setTimeout is needed to ensure all the requests finish before the total is retrieved
+    setTimeout(function() {
+     $.get('http://localhost:3000/instock', function(data) {
+         let o = JSON.stringify(data);
+         let oItems = o.split(':');
+         console.log(o);
+         
+     })
+ },1500);
+}
 
 
 function apiQuery(){
@@ -136,6 +165,8 @@ function apiQuery(){
     sendOrder();
     doButtons();
     doTotal();
+    doOutOfStockItems();
+    doInStockItems();
 }
 
 

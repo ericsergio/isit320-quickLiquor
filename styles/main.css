@@ -305,14 +305,25 @@ tbody tr:nth-child(even) {
 	opacity: 100%;
 	height:auto;
 	width:70%;
+	padding:2% 2% 5% 2%;
 	z-index: 7;
 	background-color:#005c99;
 	color:#ffffff;
 	border:solid #003c66 3px;
 }
 
+.outOfStock ul{
+	color:#d8c81d;
+}
+
 #InvoiceTotal{
 	position: absolute;
 	top:25%;
 	left:75%;
+}
+#totalLbl{
+	position: absolute;
+	top:15%;
+	left:75%;
+
 }
