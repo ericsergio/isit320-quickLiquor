@@ -15,6 +15,7 @@ function OrderItem(orderItemId, inventoryId, name, orderQuantity, unit, orderUni
 
 const Items = [];
 const urlItems = [];
+$('.testResult').hide()
 
 //this function is placed as event listener on div#distWrapper ul#distList li children. The param "that" refers to 
 //this which has the context of that element. the variable dist below is taking the last 2 characters of the li id 
@@ -29,13 +30,12 @@ function placeControls(that){
     $(that).addClass('verify');
     console.log(that);
     $('.results').before(`<button id = "checkOrder" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
+    //apiQueryCheckSetup(dist) -> Object Creation & Order Array Populated -> apiQuery() -> doOrder()
     $('.results').before('<button id = "sendOrder" onclick = "apiQuery()">Send Order</button>');
 }
 
 
 function apiQueryCheckSetup(dist) {
-    //console.log(dist);
-    //console.log($('#count').text());
     const itemCount = Number($('#count').text()) - 1;
     Order.order = new Order(`${dist}`, itemCount);
     for(var i = 1;i<=itemCount;i++) {
@@ -53,49 +53,99 @@ function apiQueryCheckSetup(dist) {
         let searchStr = isCase ? `${searchString}_case` : `${searchString}`;
         //make sure searchStr is what goes in the last param, not searchString.
         OrderItem[[itemVar]] = new OrderItem(i, vars[5], vars[0], vars[1], vars[2], vars[3], searchStr);
-        //Items is an array that gets populated with the Inventory ids which will later get appended to the end of the URL 
-        Items.push(OrderItem[[itemVar]].inventoryId);
+        //Items is an array that gets populated with the Inventory ids which will later get appended to the end of the URL
+        //This next for nested loop adds an item for each product being ordered so that the ordered quantity is accounted for.
+        //This means that the Items array will have duplicates which is what we want since if the order consists of 2 of something
+        //you want to order it twice.
+        for(let q = 0; q < OrderItem[[itemVar]].orderQuantity;q++){
+            Items.push(OrderItem[[itemVar]].inventoryId);
+        }
+        //Items.push(OrderItem[[itemVar]].inventoryId);
         console.log(OrderItem[[itemVar]]);
+        //apiQuery();
     }
 }
 
-function doOrder() {
+function doOrder() { 
     for (p in Items) {
         let url = "http://localhost:3000/getitems/";
         url = url + Items[p];
         urlItems.push(url);
-        //console.log(url);
     }
 }
 
-
-
 OrderItem.prototype.orderItemId = function(){
-    //let searchReq = {'search':this.searchString, 'quantity':this.orderQuantity}
     return this;
 };
 
-$('.testResult').hide()
-function apiQuery(){
+
+function doTempTbl() {
+    $.get('http://localhost:3000/createordertable', function(data) {
+        console.log(data);
+    })
+}
+
+function doTotal() {
+    //setTimeout is needed to ensure all the requests finish before the total is retrieved
+    setTimeout(function() {
+        $.get('http://localhost:3000/total', function(data) {
+            let o = JSON.stringify(data);
+            let oItems = o.split(':');
+            let total = oItems[1].replace(/"}]/gi,'').replace(/"/gi,'');
+            console.log(total);
+            $('.itemized').before(`<h3 id = 'InvoiceTotal'>$${total}</h3>`);
+        })
+    },800);
+}
+
+function sendOrder() {
     doOrder();
-    $('.testResult').fadeIn(300)
-    //http://104.42.49.64/
-    //http://localhost:3000/getitems/109
-    //$.get("http://localhost:3000/getitems/109", function(data) {
+    var counter = 0;
+    $(".testResult").fadeIn(700)
     for(p in urlItems) {
         $.get(urlItems[p], function(data) {
-            let o = JSON.stringify(data);
-            let newO = new Object(data);
+            var o = JSON.stringify(data);
             let oItems = o.split(',');
-            //$(".testResult").append(`<p class = 'data'>${oItems[0]} | ${oItems[2]} | ${oItems[3]} | ${oItems[4]}</p>`);
+            var name = oItems[2].substring(7).replace(/":\\"/gi,'').replace(/\\"/gi,'');
+            var price = Number(oItems[3].substring(8).replace(/:\\"/gi, '').replace(/\\"/gi,'').replace(/"/gi,''));
+            console.log(o);
+            //$(".testResult").html(`<p class = 'data'>${oItems[0]}</p>`);
+            let rowId = `row${counter}`;
+            $("#itemizedBody").append(`<tr id = ${rowId}><td class = 'data'>${name}</td><td class = 'data'>$${price}</td></tr>`);
+            counter++;
             //$(".testResult").append(`<p class = 'data'>${oItems[0]} | ${oItems[2]}</p>`);
-            $(".testResult").append(`<p class = 'data'>${JSON.stringify(data)}</p>`);
-            
+            //$(".testResult").append(`<p class = 'data'>${JSON.stringify(data)}</p>`);
             //$(".testResult").append(JSON.stringify(data) + "\n");
         })
     }
 }
 
+function doHideMsg() {
+    $('.testResult').fadeOut(300);
+}
+
+function doButtons() {
+    $('.testResult').fadeIn(700)
+    $('.itemized').before(`<button id = "OkBtn" onclick = "doHideMsg()">OK</button>`);
+}
 
 
 
+function apiQuery(){
+    doTempTbl();
+    sendOrder();
+    doButtons();
+    doTotal();
+}
+
+
+
+
+
+
+
+
+
+    //http://104.42.49.64/
+    //http://localhost:3000/getitems/109
+    //$.get("http://localhost:3000/getitems/109", function(data) {
