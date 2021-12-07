@@ -447,6 +447,7 @@ $(document).ready(function () {
 		//in landscape view
 		//doFooter();
 	}
+	// sidebar click
 	$('.dist').each(function () {
 		$(this)[0].addEventListener("click", function doDist(distName) {
 			$('.resultWrapper').children().remove();

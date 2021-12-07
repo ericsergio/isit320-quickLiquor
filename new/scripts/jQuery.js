@@ -9787,3 +9787,20 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 }
 
 })( window );
+
+// question mark feature
+showInfoCases = ['#showLiquorInfo', '#showWineInfo', '#showBottlesInfo', '#showKegsInfo', '#showNAInfo', '#showSoInfo', '#showCoInfo', '#showCrInfo', '#showYoInfo']
+infoCases = ['#liquorInfo', '#wineInfo', '#bottlesInfo', '#kegsInfo', '#NAInfo', '#filterSoInfo', '#filterCoInfo', '#filterCrInfo', '#filterYoInfo']
+
+
+jQuery(function(){
+	for(let i = 0; i < showInfoCases.length; i++){
+		jQuery(showInfoCases[i]).on('mouseover', function(){
+			jQuery(infoCases[i]).show();
+		});
+		jQuery(showInfoCases[i]).on('mouseout', function(){
+			jQuery(infoCases[i]).hide();
+		});
+	}
+
+});
