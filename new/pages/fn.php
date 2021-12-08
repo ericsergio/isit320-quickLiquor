@@ -33,10 +33,11 @@ class Booz {
 		$db = $this->do_config(1);
 		$user = $this->do_config(2);
 		$pass = $this->do_config(3);			
+		
 		$conStr = sprintf("mysql:host=%s;dbname=%s",$host, $db);
 		//echo $conStr;
 		try {
-			$this->pdo = new PDO($conStr, 'jerry', 'jerry');
+			$this->pdo = new PDO($conStr, $user, $pass);
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}

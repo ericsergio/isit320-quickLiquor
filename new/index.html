@@ -25,47 +25,36 @@
 		<!--<div class = "typeBar">-->
 			<div class = "typeWrapper">
 				<ul class = "typeList">
-					<li id = "countLiquor" class = "type selected">Liquor<div id="showLiquorInfo" class="typeInfo">?</div></li>
-					<li id = "countWine" class = "type">Wine<div id="showWineInfo" class="typeInfo">?</div></li>
-					<li id = "countBottles" class = "type">Bottles<div id="showBottlesInfo" class="typeInfo">?</div></li>
-					<li id = "countKegs" class = "type">Kegs<div id="showKegsInfo" class="typeInfo">?</div></li>
-					<li id = "countNA" class = "type">NA<div id="showNAInfo" class="typeInfo">?</div></li>
+					<li id = "countLiquor" class = "type selected">Liquor</li>
+					<li id = "countWine" class = "type">Wine</li>
+					<li id = "countBottles" class = "type">Bottles</li>
+					<li id = "countKegs" class = "type">Kegs</li>
+					<li id = "countNA" class = "type">NA</li>
 				</ul>
-				<ul class="typeInfoList">
-					<div id="liquorInfo"><li>Displays the liquor count list</li></div>
-					<div id="wineInfo"><li>Displays the wine count list</li></div>
-					<div id="bottlesInfo"><li>Displays the bottled beer count list</li></div>
-					<div id="kegsInfo"><li>Displays the keg beer count list</li></div>
-					<div id="NAInfo"><li>Displays the non-alcoholic count list</li></div>
-				</ul>
+	
 				<ul class = "typeLeftRight" style = "visibility: hidden;">
 					<li id = 'typeMoveLeft'><img src = "images/arrowLeft.png" onclick = "decrementIdx()"></li>
 					<li id = 'typeMoveRight'><img src = "images/arrowRight.png" onclick = "incrementIdx()"></li>
 				</ul>
 				<div class = resultFilter>
 					<ul id = 'resultFilterList' class = 'countFilters'>
-						<li id='filterSo'>Southern</li>
-						<li id='filterCo'>Columbia</li>
-						<li id='filterCr'>Crown</li>
-						<li id='filterYo'>Youngs</li>
-						<li id="processCount" value = "Submit" onclick = "processCount()">Submit</li>
+						<li id = 'filterSo'>Southern</li>
+						<li id = 'filterCo'>Columbia</li>
+						<li id = 'filterCr'>Crown</li>
+						<li id = 'filterYo'>Youngs</li>
+						<li id = "processCount" value = "Submit" onclick = "processCount()">Submit</li>
 					</ul>
-				</div>					
+				</div>	
+
 			</div>
 		<!--</div>-->
 		<!--<div class = "distBar">-->
 		<div class = "distWrapper">
 			<ul class = "distList">
-				<li id='distSo' class="dist">Southern<div id="showSoInfo" class="typeInfo">?</div></li>
-				<li id='distCo' class="dist">Columbia<div id="showCoInfo" class="typeInfo">?</div></li>
-				<li id='distCr' class="dist">Crown<div id="showCrInfo" class="typeInfo">?</div></li>
-				<li id='distYo' class="dist">Youngs<div id="showYoInfo" class="typeInfo">?</div></li>
-			</ul>
-			<ul class='resultFilterInfoList'>
-				<div id='filterSoInfo'><li>Items which had a distributor with Southern</li></div>
-				<div id='filterCoInfo'><li>Items which had a distributor with Columbia</li></div>
-				<div id='filterCrInfo'><li>Items which had a distributor with Crown</li></div>
-				<div id='filterYoInfo'><li>Items which had a distributor with Youngs</li></div>
+				<li id = 'distSo' class = "dist">Southern</li>
+				<li id = 'distCo' class = "dist">Columbia</li>
+				<li id = 'distCr' class = "dist">Crown</li>
+				<li id = 'distYo' class = "dist">Youngs</li>
 			</ul>
 		</div>
 		<!--</div>-->
