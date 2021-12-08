@@ -1,0 +1,59 @@
+CREATE VIEW `so_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 1));
+
+CREATE VIEW `co_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 2));
+
+CREATE VIEW `cr_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 3));
+
+CREATE VIEW `yo_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 4));

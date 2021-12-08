@@ -27,7 +27,7 @@ class ToggleMenu {
 	constructor(evenOdd) {
 		this.evenOdd = evenOdd;
 	}
-};
+}
 
 ToggleMenu.init = new ToggleMenu(0);
 
@@ -44,26 +44,26 @@ function checkDisplay () {
 		$($('.typeList').children()[i]).addClass('selected');
 		$('.typeList').children().not('.selected').css('display', 'none');
 		$('.navWrapper .navList').after('<div id = "mobileMenuBtn" onclick = "mobileDisplayDists()"><img src = "images/menu.png" ></div>');
-	};
+	}
 	return chkDisplay;
-};
+}
 
 window.onload = checkDisplay();
 function ProcessItems(name, count) {
 	this.name = name;
 	this.count = count || 0;
-};
+}
 
 function doItems() {
 	$('.itemList').children("li").each(function () {
 		$(this).addClass('liResult');
-	})
+	});
 }
 
 //Gives input to the 1st input on the count page after a type is clicked.
 function doFocus() {
 	$(".itemList").children("input:first").focus();
-};
+}
 
 $(document).ready(function() {
 	$('.countFilters').children().on('click', function() {
@@ -75,7 +75,7 @@ $(document).ready(function() {
 				var liItem = $(this);
 				var inpItem = document.getElementById($(this).text());
 				liItem.hide();
-				$(inpItem).hide()
+				$(inpItem).hide();
 			}						
 		});
 	});
@@ -100,7 +100,7 @@ $(document).ready(function () {
 			var purposeTypes = [1, 4, 6];
 			var purposePages = ["index.html", "managedb.html", "info.html"];
 			//I did it this way so I could add more pages that could have page specific php functions from the same php class depending on which html page the below ajax request is run from.
-			for(var p in purposePages) {
+			for( p in purposePages) {
 				if(currPage === purposePages[p]) {
 					var purposeIdx = purposePages.indexOf(currPage);
 					var purpose = purposeTypes[purposeIdx];
@@ -108,9 +108,6 @@ $(document).ready(function () {
 					if(purposeIdx === 0) {
 						var postPath = "pages/fn.php";
 					} else {
-						//because both managedb.html and index.html use this the relative path is different based on the 
-						//purpose its being used for. It should use the below path if this is being used from managedb.html 
-						//above if index.html
 						var postPath = "fn.php";
 					}
 				}
@@ -147,7 +144,7 @@ $(document).ready(function () {
 									iRow.i_name, iRow.i_dist, iRow.i_type, iRow.i_par, iRow.d_order_type, 
 									iRow.d_order_quantity, iRow.default_order, iRow.on_hand
 									);
-								for(var p in ItemRow.selectedItem) {
+								for(p in ItemRow.selectedItem) {
 									$('ul.keyValList').append(
 										`<li>${p}</li><li id = ${p} onclick = "updateVal($(this))">${ItemRow.selectedItem[p]}</li>`
 									);									
@@ -378,7 +375,7 @@ posted params:
 */
 function confirmChange() {
 	var changes = [];
-	for(var p in ItemRow.itemCopy) {
+	for(p in ItemRow.itemCopy) {
 		if(ItemRow.itemCopy[p] !== ItemRow.selectedItem[p]) {
 			changes.push(`${p} : ${ItemRow.selectedItem[p]}`);
 		}
@@ -392,12 +389,12 @@ function confirmChange() {
 		//Need to display error here if one occurs via alert or something
 		console.log("ajax response : " + data);
 	});
-	$('div.updateWrapper').css("visibility", "hidden");
+	$('div.updateWrapper').css("visibility", "hidden");	
 	$('.resultWrapper').show();
 	$('#filterList').show();
 	$('.selected').show();
 	$('.typeLeftRight li img').show();
-};
+}
 
 /*
 Applies to Exit button on manageDB page. Should probably move this function to manageDb.js.
@@ -427,7 +424,7 @@ function doFooter() {
 			'top':'531px'
 		});			
 	}
-};
+}
 
 //Purpose #3
 /*
@@ -487,11 +484,11 @@ function processCount() {
 		}
 	})
 	var props = [];
-	for(var p in ProcessItems) {
+	for(p in ProcessItems) {
 		props.push(ProcessItems[p])
 	}
 	var name_count = [];
-	for(var p in props) {
+	for(p in props) {
 		name_count.push(props[p].name + "--" + props[p].count);
 	}
 	var name_count_str = name_count.join();
@@ -500,7 +497,7 @@ function processCount() {
 	.done(function(data) {
 		console.log("ajax response : " + data);
 	});
-};
+}
 
 /*
 This is for mobile layouts.
@@ -524,7 +521,7 @@ function incrementIdx() {
 		'display':'grid',
 		'grid-template-columns':'20%'
 	});
-};
+}
 
 /*
 This is for mobile layouts.
@@ -549,7 +546,7 @@ function decrementIdx() {
 		'display':'grid',
 		'grid-template-columns':'20%'
 	});
-};
+}
 
 
 /*
@@ -593,6 +590,6 @@ function mobileDisplayDists() {
 		$('.selected').show();
 		$('.typeLeftRight').show();
 	};
-};
+}
 
 

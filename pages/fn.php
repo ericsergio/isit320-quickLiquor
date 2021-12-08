@@ -98,21 +98,24 @@ class Booz {
 	}
 	public function get_order_by_dist($idx) {
 		try {
-			//echo "<h1>Purpose: $purpose</h1>";
 			$idx = $idx - 1;
-			$sql_order_views = ["SELECT * from so_order", "SELECT * from co_order", "SELECT * from cr_order", "SELECT * from yo_order"];
+			$sql_order_views = ["SELECT * from so_order2", "SELECT * from co_order2", "SELECT * from cr_order2", "SELECT * from yo_order2"];
 			$this->pdo->beginTransaction();
 			$stmt = $this->pdo->prepare($sql_order_views[$idx]);
 			$stmt->execute();
-			echo "<table id = 'orderTable'><tbody><thead><th>Item</th><th>Order</th><th>Unit</th><th>Unit Type</th><th>On Hand</th></thead>";
+			$count = 1;
+			echo "<table id = 'orderTable'><thead><th>Item</th><th>Order</th><th>Unit</th><th>Unit Type</th><th>On Hand</th><th>Inv ID</th></thead>";
 			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->name;
 				$sql_default = $result->default;
 				$sql_unit = $result->unit;
 				$sql_unit_type = $result->unit_type;
 				$sql_current = $result->current;
-				echo "<tr><td>$sql_name</td><td>$sql_default</td><td>$sql_unit</td><td>$sql_unit_type</td><td>$sql_current</td></tr>";
+				$sql_inv_id = $result->InventoryId;
+				echo "<tr><td>$sql_name</td><td>$sql_default</td><td>$sql_unit</td><td>$sql_unit_type</td><td>$sql_current</td><td>$sql_inv_id</td></tr>";
+				$count += 1;
 			}
+			echo "<p id = 'count'>$count</p>";
 			echo "</tbody></table>";
 			$stmt->closeCursor();
 			$this->pdo->commit();
@@ -125,8 +128,8 @@ class Booz {
 	public function displayTableForEdit($idx) {
 		try {
 			$idx = $idx - 1;
-			$sql_manageable_tables = ["SELECT * from i_details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
-			//$this->pdo->beginTransaction();
+			$sql_manageable_tables = ["SELECT * from i_Details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
+			$this->pdo->beginTransaction();
 			$stmt = $this->pdo->prepare($sql_manageable_tables[$idx]);
 			$stmt->execute();
 			echo "<table id = 'resultTable'>
@@ -375,23 +378,30 @@ class Booz {
 $new_query = new Booz();
 if($purpose == 1) {
 	$new_query->do_booz_by_type($idx);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 2) {
 	$new_query->process_count($namecount);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 3) {
 	$new_query->get_order_by_dist($idx);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 4) {
 	$new_query->displayTableForEdit($idx);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 5) {
 	$new_query->updateItem($idx, $originalname, $changeArr);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 6) {
 	$new_query->do_info($idx, $purpose);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 if($purpose == 7) {
 	$new_query->do_item_info($item_name);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
 ?>
