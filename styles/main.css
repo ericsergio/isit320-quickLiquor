@@ -300,11 +300,11 @@ tbody tr:nth-child(even) {
 
 .testResult{
 	position:absolute;
-	top:35%;
-	left:2%;
+	top:30%;
+	left:5%;
 	opacity: 100%;
 	height:auto;
-	width:70%;
+	width:60%;
 	padding:2% 2% 5% 2%;
 	z-index: 7;
 	background-color:#005c99;
