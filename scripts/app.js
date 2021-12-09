@@ -1,4 +1,4 @@
-class ItemRow {
+class Item_Row {
 	constructor(i_name, i_dist, i_type, i_par, d_order_type, d_order_quantity, default_order, on_hand) {
 		this.i_name = i_name;
 		this.i_dist = i_dist;
@@ -137,16 +137,16 @@ $(document).ready(function () {
 									$('div.updateWrapper').prepend("<ul class = 'keyValList'></ul>");
 								}
 								$('.resultWrapper').hide();
-								ItemRow.selectedItem = new ItemRow(valArr[0], valArr[1], valArr[2], valArr[3],
+								Item_Row.selectedItem = new Item_Row(valArr[0], valArr[1], valArr[2], valArr[3],
 									valArr[4], valArr[5], valArr[6], valArr[7]);
-								var iRow = ItemRow.selectedItem;
-								ItemRow.itemCopy = new ItemRow(
+								var iRow = Item_Row.selectedItem;
+								Item_Row.itemCopy = new Item_Row(
 									iRow.i_name, iRow.i_dist, iRow.i_type, iRow.i_par, iRow.d_order_type, 
 									iRow.d_order_quantity, iRow.default_order, iRow.on_hand
 									);
-								for(p in ItemRow.selectedItem) {
+								for(p in Item_Row.selectedItem) {
 									$('ul.keyValList').append(
-										`<li>${p}</li><li id = ${p} onclick = "updateVal($(this))">${ItemRow.selectedItem[p]}</li>`
+										`<li>${p}</li><li id = ${p} onclick = "updateVal($(this))">${Item_Row.selectedItem[p]}</li>`
 									);									
 								}
 								$('div.updateWrapper').css({
@@ -173,47 +173,47 @@ function updatePageDiv(orig, field, changed) {
 	switch(field) {
 		case 1:
 			if(changed.length <= 0) {
-				changed = ItemRow.selectedItem.i_name;
+				changed = Item_Row.selectedItem.i_name;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.i_name = changed;
+			Item_Row.selectedItem.i_name = changed;
 			break;
 		case 2:
 			$('#i_dist').text(changed);
-			ItemRow.selectedItem.i_dist = changed.substr(-1, 1);
+			Item_Row.selectedItem.i_dist = changed.substr(-1, 1);
 			break;
 		case 3:
 			$('#i_type').text(changed);
-			ItemRow.selectedItem.i_type = changed.substr(-1, 1);
+			Item_Row.selectedItem.i_type = changed.substr(-1, 1);
 			break;
 		case 4:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.i_par;
+				changed = Item_Row.selectedItem.i_par;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.i_par = Number(changed);
+			Item_Row.selectedItem.i_par = Number(changed);
 			break;
 		case 5:
 			$('#d_order_type').text(changed);
-			ItemRow.selectedItem.d_order_type = changed.substr(-1, 1);
+			Item_Row.selectedItem.d_order_type = changed.substr(-1, 1);
 			break;
 		case 6:
 			$('#d_order_quantity').text(changed);
-			ItemRow.selectedItem.d_order_quantity = changed.substr(-1, 1);
+			Item_Row.selectedItem.d_order_quantity = changed.substr(-1, 1);
 			break;
 		case 7:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.default_order;
+				changed = Item_Row.selectedItem.default_order;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.default_order = Number(changed);
+			Item_Row.selectedItem.default_order = Number(changed);
 			break;
 		case 8:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.on_hand;
+				changed = Item_Row.selectedItem.on_hand;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.on_hand = Number(changed);
+			Item_Row.selectedItem.on_hand = Number(changed);
 			break;
 		}
 }
@@ -222,7 +222,7 @@ function updatePageDiv(orig, field, changed) {
 to do: later - the updates only work for the items table right now. So if an incorrect item is entered in the ordered
 table, you need to update the incorrect field in MySQL++++++come back to this+++++++ It will require you to add new 
 constructors for the objects representing the row to be updated. For the table that is working (the items table), refer
-to the class ItemRow that is currently at the very top of the page (app.js). Then, you will need to add the new object
+to the class Item_Row that is currently at the very top of the page (app.js). Then, you will need to add the new object
 instantiations in the doTable(tblRowID) function followed by creating another object copy so that the original values
 are stored along with the new values because the original values are being referenced in the SQL update function. In the
 switch below, the cases are specific to the column names in the Items table so do something clever to differenciate
@@ -375,12 +375,12 @@ posted params:
 */
 function confirmChange() {
 	var changes = [];
-	for(p in ItemRow.itemCopy) {
-		if(ItemRow.itemCopy[p] !== ItemRow.selectedItem[p]) {
-			changes.push(`${p} : ${ItemRow.selectedItem[p]}`);
+	for(p in Item_Row.itemCopy) {
+		if(Item_Row.itemCopy[p] !== Item_Row.selectedItem[p]) {
+			changes.push(`${p} : ${Item_Row.selectedItem[p]}`);
 		}
 	}
-	var origName = ItemRow.itemCopy.i_name;
+	var origName = Item_Row.itemCopy.i_name;
 	var idx = $('.selected').index() + 1;
 	var purpose = 5;
 	console.log(`fieldChangeToFromValue : ${changes[0]}`);

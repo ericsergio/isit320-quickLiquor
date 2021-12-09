@@ -30,9 +30,9 @@ function placeControls(that){
     $(that).addClass('verify');
     console.log(that);
     if($('button').length < 2 ) {
-        $('.results').before(`<button id = "checkOrder" class = "apiBtnUp" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
+        $('.results').before(`<button id = "checkOrder" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
         //apiQueryCheckSetup(dist) -> Object Creation & Order Array Populated -> apiQuery() -> doOrder()
-        $('.results').before('<button id = "sendOrder" onclick = "apiQuery()">Send Order</button>');
+        $('.results').before('<button id = "sendOrder" onclick = "apiQuery()">Send Order</button>');   
     }
 }
 
