@@ -29,9 +29,11 @@ function placeControls(that){
     let dist = $(that).attr('id').substr($(that).attr('id').length - 2);
     $(that).addClass('verify');
     console.log(that);
-    $('.results').before(`<button id = "checkOrder" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
-    //apiQueryCheckSetup(dist) -> Object Creation & Order Array Populated -> apiQuery() -> doOrder()
-    $('.results').before('<button id = "sendOrder" onclick = "apiQuery()">Send Order</button>');
+    if($('button').length < 2 ) {
+        $('.results').before(`<button id = "checkOrder" class = "apiBtnUp" onclick="apiQueryCheckSetup('${dist}')">Check Order</button>`);
+        //apiQueryCheckSetup(dist) -> Object Creation & Order Array Populated -> apiQuery() -> doOrder()
+        $('.results').before('<button id = "sendOrder" onclick = "apiQuery()">Send Order</button>');
+    }
 }
 
 
@@ -58,9 +60,10 @@ function apiQueryCheckSetup(dist) {
         //This means that the Items array will have duplicates which is what we want since if the order consists of 2 of something
         //you want to order it twice.
         for(let q = 0; q < OrderItem[[itemVar]].orderQuantity;q++){
+            //This loop de-groups the items so if 3 kegs of bud light were being ordered this will create a record for 
+            //each keg to be sent rather than sending 3 kegs of bud light.
             Items.push(OrderItem[[itemVar]].inventoryId);
         }
-        //Items.push(OrderItem[[itemVar]].inventoryId);
         console.log(OrderItem[[itemVar]]);
         //apiQuery();
     }
@@ -139,6 +142,7 @@ function doOutOfStockItems() {
             let oItems = o.split(',');
             $('.outOfStock ul').before(`<h2>Items Not Currently In Stock:</h2>`);
             for(var i=2;i<oItems.length;i+=3) {
+                //this line breaks it on vm - has to do with the regex and the quotation marks being read differently
                 $('.outOfStock ul').append(`<li>${oItems[i].slice(12,-2).replace(/"/gi,'').replace(/_/gi, ' ')}</li>`);
                 //console.log(oItems[i]);
             }
