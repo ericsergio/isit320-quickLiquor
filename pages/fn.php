@@ -37,7 +37,7 @@ class Booz {
 		$conStr = sprintf("mysql:host=%s;dbname=%s",$host, $db);
 		//echo $conStr;
 		try {
-			$this->pdo = new PDO($conStr, 'cis', 'password');
+			$this->pdo = new PDO($conStr, $user, $pass);
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
@@ -316,7 +316,7 @@ class Booz {
 			echo "<ul class = 'itemList'>";
 			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->i_name;
-				echo "<li onclick = 'doItemInfo(this)'>$sql_name</li>";
+				echo "<li onclick = 'selectItemInfo(this)'>$sql_name</li>";
 			}
 			echo "</ul>";
 			$stmt->closeCursor();
