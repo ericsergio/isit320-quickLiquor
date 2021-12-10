@@ -8,14 +8,24 @@
 		<meta charset="UTF-8" lang="en-us">
 		<link rel='stylesheet' href='styles/main.css'>
 		<link rel='stylesheet' href='styles/mobile.css'>
-		<script src = 'scripts/jQuery.js'></script>
+
+	    <!--<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>-->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<!--<script src = 'scripts/jQuery.js'></script>-->
 		<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
 		
 	</head>
 	<body>
 		<div id = "displayIndicator" style = "display:none;"></div>
-		<div class = "testResult"></div>
+		<div class = "testResult">
+			<table class = 'itemized'><thead><th>Product Name</th><th>Price</th></thead><tbody id = 'itemizedBody'></tbody>
+			</table>
+			<div class = 'outOfStock'>
+				<ul></ul>
+			</div>
+		</div>
+		
 		<nav role="navigation" class="navBar">
 			<div class="navWrapper">
 				<ul class="navList">
