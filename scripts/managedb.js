@@ -1,9 +1,17 @@
 function doFilters(typeName) {
+<<<<<<< HEAD
     if ($("#filterList").children().length > 0) {
         $("#filterList").remove();
     }
     $(".results").before(
         ' \
+=======
+  if ($("#filterList").children().length > 0) {
+    $("#filterList").remove();
+  }
+  $(".results").before(
+    ' \
+>>>>>>> a47bd401705b06dd86a91a6b214602dd9d1e516f
    <ul id = "filterList"> \
        <li id = "searchFilter"> \
            <input type = "text" id = "nameFilter_Input" placeholder = "SEARCH"> \
@@ -67,6 +75,7 @@ function doFilters(typeName) {
            </select> \
        </li> \
    </ul>'
+<<<<<<< HEAD
     );
     /////////
     //Type Filter
@@ -119,4 +128,58 @@ function doFilters(typeName) {
             $(this).toggle($(this).text().indexOf(textVal) > -1);
         });
     });
+=======
+  );
+  /////////
+  //Type Filter
+  /////////
+  $("#typeFilter_Select").on("change", function () {
+    var matchId = $(this).val();
+    $("#resultTable tbody tr").each(function () {
+      $(this).hide();
+      if ($(this).children(":eq(2)").text() === matchId) {
+        $(".tblHead").show();
+        $(this).show();
+      }
+    });
+  });
+  ////////
+  //Dist Filter
+  ///////
+  $("#distFilter_Select").on("change", function () {
+    var matchId = $(this).val();
+    $("#resultTable tbody tr").each(function () {
+      $(this).hide();
+      if ($(this).children(":eq(1)").text() === matchId) {
+        $(".tblHead").show();
+        $(this).show();
+      }
+    });
+  });
+  ////////
+  //OrderType Filter
+  ///////
+  $("#orderTypeFilter_Select").on("change", function () {
+    var matchId = $(this).val();
+    //var orderTypeMatch = Number(matchId.substring(matchId.length - 1, matchId.length));
+    $("#resultTable tbody tr").each(function () {
+      $(this).hide();
+      if ($(this).children(":eq(4)").text() === matchId) {
+        $(".tblHead").show();
+        $(this).show();
+      }
+    });
+  });
+  ////////
+  //Search Filter
+  ///////
+  $("#nameFilter_Input").on("keyup", function () {
+    var textVal = $(this).val();
+    var head = $(".resultHead");
+    $("#resultTable tr:gt(0)").filter(function () {
+      $(".tableHead").toggle();
+      $(this).toggle($(this).text().indexOf(textVal) > -1);
+    });
+  });
+>>>>>>> a47bd401705b06dd86a91a6b214602dd9d1e516f
 }
