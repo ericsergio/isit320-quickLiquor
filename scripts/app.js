@@ -20,6 +20,8 @@ class Item_Row {
   }
 }
 
+console.log("hello world");
+
 /* NOTE: I'm pretty sure StoreType was only for having the correct filters in managedb.html after clicking
 new tables in typeWrapper without reloading the page. I had some issues getting it to work and scratched it 
 until later or trying a different solution all togethor. I can't remember though if it was for anything else
@@ -564,6 +566,10 @@ function incrementIdx() {
     "grid-template-columns": "20%",
   });
 }
+
+$(document).on("click", "resultWrapper", function () {
+  $(this).closest("div").remove();
+});
 
 /*
 This is for mobile layouts.
