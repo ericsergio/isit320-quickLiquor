@@ -5,17 +5,21 @@ $namecount = $_POST['namecount'] ?? '';
 $changeArr = $_POST['changeArr'] ?? '';
 $originalname = $_POST['originalname'] ?? '';
 $item_name = $_POST['item_name'] ?? '';
+$statsArray = $_POST['data'] ?? '';
+echo $statsArray[0];
 ////////////
-class Booz {
-	protected function do_config($num) {
-		$config=file_get_contents('config');
+class Booz
+{
+	protected function do_config($num)
+	{
+		$config = file_get_contents('config');
 		$config_values = [];
 		$arr = explode(',', $config);
 		$val_arr = ['/^h:/', '/^d:/', '/^u:/', '/^p:/'];
 		$dsn_parts = [];
-		foreach($arr as $current) {
-			for($i = 0;$i < count($val_arr); $i++) {
-				if(preg_match($val_arr[$i], $current) === 1) {
+		foreach ($arr as $current) {
+			for ($i = 0; $i < count($val_arr); $i++) {
+				if (preg_match($val_arr[$i], $current) === 1) {
 					$arr_letter = $current[0];
 					$arr_name = $arr_letter . 'Arr';
 					$$arr_name = preg_split('/:/', $current);
@@ -25,16 +29,17 @@ class Booz {
 			}
 		}
 		return $dsn_parts[$num];
-	}	
-	public function __construct() {
+	}
+	public function __construct()
+	{
 		//the :: operator allows you to access per class constants
 		//the special keywords self, static, and parent are used to access properties or methods from inside the class definition.
 		$host = $this->do_config(0);
 		$db = $this->do_config(1);
 		$user = $this->do_config(2);
-		$pass = $this->do_config(3);			
-		
-		$conStr = sprintf("mysql:host=%s;dbname=%s",$host, $db);
+		$pass = $this->do_config(3);
+
+		$conStr = sprintf("mysql:host=%s;dbname=%s", $host, $db);
 		//echo $conStr;
 		try {
 			$this->pdo = new PDO($conStr, $user, $pass);
@@ -43,7 +48,8 @@ class Booz {
 		}
 	}
 	private $pdo = null;
-	public function do_booz_by_type($idx) {
+	public function do_booz_by_type($idx)
+	{
 		try {
 			$this->pdo->beginTransaction();
 			$sql = "SELECT i_name, i_dist FROM items WHERE i_type = $idx";
@@ -51,7 +57,7 @@ class Booz {
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->execute();
 			echo "<ul class = 'itemList'>";
-			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+			while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->i_name;
 				$sql_dist = $result->i_dist;
 				echo "<li dVal = $sql_dist>$sql_name</li>";
@@ -66,24 +72,25 @@ class Booz {
 			die($e->getMessage());
 		}
 	}
-	public function process_count($namecount) {
+	public function process_count($namecount)
+	{
 		$namecount_str = $namecount;
 		$item_names = [];
 		$item_counts = [];
 		$sql_arr = [];
 		$namecount_vals = explode(',', $namecount_str);
-		foreach($namecount_vals as $current) {
+		foreach ($namecount_vals as $current) {
 			$item_name_count_arr = (preg_split("/[-][-]/", $current));
 			array_push($item_names, $item_name_count_arr[0]);
 			array_push($item_counts, $item_name_count_arr[1]);
 		}
-		for($i = 0; $i < count($namecount_vals); $i++) {
+		for ($i = 0; $i < count($namecount_vals); $i++) {
 			$sql = "UPDATE items SET on_hand = $item_counts[$i] WHERE i_name = '$item_names[$i]'";
 			array_push($sql_arr, $sql);
 		}
 		try {
 			$this->pdo->beginTransaction();
-			foreach($sql_arr as $current) {
+			foreach ($sql_arr as $current) {
 				$sql = $current;
 				$stmt = $this->pdo->prepare($sql);
 				$stmt->execute();
@@ -96,7 +103,8 @@ class Booz {
 			die($e->getMessage());
 		}
 	}
-	public function get_order_by_dist($idx) {
+	public function get_order_by_dist($idx)
+	{
 		try {
 			$idx = $idx - 1;
 			$sql_order_views = ["SELECT * from so_order2", "SELECT * from co_order2", "SELECT * from cr_order2", "SELECT * from yo_order2"];
@@ -105,16 +113,16 @@ class Booz {
 			$stmt->execute();
 			$count = 1;
 			echo "<table id = 'orderTable'><tbody><thead><th>Item</th><th>Order</th><th>Unit</th><th>Unit Type</th><th>On Hand</th><th>Distributer Id</th></thead>";
-			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+			while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->name;
 				$sql_default = $result->default;
 				$sql_unit = $result->unit;
 				$sql_unit_type = $result->unit_type;
 				$sql_current = $result->current;
-				$sql_inv_id = $result->InventoryId;				
-				
+				$sql_inv_id = $result->InventoryId;
+
 				echo "<tr><td>" . $sql_name . "</td><td>" . $sql_default . "</td><td>" . $sql_unit . "</td><td>" . $sql_unit_type . "</td><td>" . $sql_current . "</td><td>" . $sql_inv_id . "</td></tr>";
-				
+
 				$count += 1;
 			}
 			echo "<p id = 'count'>$count</p>";
@@ -127,7 +135,8 @@ class Booz {
 			die($e->getMessage());
 		}
 	}
-	public function displayTableForEdit($idx) {
+	public function displayTableForEdit($idx)
+	{
 		try {
 			$idx = $idx - 1;
 			$sql_manageable_tables = ["SELECT * from i_details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
@@ -137,10 +146,10 @@ class Booz {
 			echo "<table id = 'resultTable'>
 					<caption>Results Table</caption>
 					<thead class = 'resultHead'>";
-			switch($idx) {
-				//items
-				case 0 :
-						echo "
+			switch ($idx) {
+					//items
+				case 0:
+					echo "
 						<th class = 'col1'>Item</th>
 						<th>Dist</th>
 						<th>Type</th>
@@ -150,8 +159,8 @@ class Booz {
 						<th>Quantity</th>
 						<th>On Hand</th>
 					</thead>";
-			
-					while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+
+					while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 						$sql_i_name = $result->Name;
 						$sql_i_dist = $result->Dist;
 						$sql_i_type = $result->Type;
@@ -172,15 +181,15 @@ class Booz {
 								<td>$sql_on_hand</td>
 							</tr>";
 					}
-				break;
-				//dists
-				case 1 :
-						echo "
+					break;
+					//dists
+				case 1:
+					echo "
 							<th class = 'col1'>d_id</th>
 							<th>d_name</th>
 						</thead>";
-						
-					while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+
+					while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 						$sql_d_id = $result->d_id;
 						$sql_d_name = $result->d_name;
 						echo "
@@ -189,15 +198,15 @@ class Booz {
 								<td>$sql_d_id</td>
 							</tr>";
 					}
-				break;
-				//order_units
-				case 2 :
-						echo "
+					break;
+					//order_units
+				case 2:
+					echo "
 							<th>ou_name</th>
 							<th class = 'col1'>ou_id</th>
 						</thead>";
-						
-					while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+
+					while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 						$sql_ou_id = $result->ou_id;
 						$sql_ou_name = $result->ou_name;
 						echo "
@@ -206,10 +215,10 @@ class Booz {
 								<td>$sql_ou_id</td>
 							</tr>";
 					}
-				break;
-				//ordered
-				case 3 :
-						echo "
+					break;
+					//ordered
+				case 3:
+					echo "
 							<th>o_name</th>
 							<th class = 'col1'>o_id</th>
 							<th>o_quantity</th>
@@ -217,8 +226,8 @@ class Booz {
 							<th>o_unit_quantity</th>
 							<th>o_date</th>
 						</thead>";
-						
-					while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+
+					while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 						$sql_o_id = $result->o_id;
 						$sql_o_name = $result->o_name;
 						$sql_o_quantity = $result->o_quantity;
@@ -235,15 +244,15 @@ class Booz {
 								<td>$sql_o_date</td>
 							</tr>";
 					}
-				break;
-				//unit_quantity
-				case 4 :
-						echo "
+					break;
+					//unit_quantity
+				case 4:
+					echo "
 							<th>uq_name</th>
 							<th class = 'col1'>uq_id</th>
 						</thead>";
-						
-					while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+
+					while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 						$sql_uq_id = $result->uq_id;
 						$sql_uq_name = $result->uq_name;
 						echo "
@@ -252,10 +261,10 @@ class Booz {
 								<td>$sql_uq_id</td>
 							</tr>";
 					}
-				break;
-				default :
+					break;
+				default:
 					echo "<h2>Error getting table results</h2>";
-				break;
+					break;
 			};
 			echo "
 				</tbody>
@@ -273,13 +282,14 @@ class Booz {
 			die($e->getMessage());
 		}
 	}
-	public function updateItem($idx, $originalname, $changeArr) {
+	public function updateItem($idx, $originalname, $changeArr)
+	{
 		$tbls = ["items", "dists", "order_units", "ordered", "unit_quantity"];
 		$index = $idx - 1;
 		$table = $tbls[$index];
 		$sql_change_num = 1;
 		$queries = [];
-		foreach($changeArr as $current) {
+		foreach ($changeArr as $current) {
 			$query_name = "\nsql_change_query" . $sql_change_num;
 			$change_field = str_replace(':', '=', $current);
 			$query = "UPDATE $table SET $change_field WHERE i_name = '$originalname';";
@@ -290,23 +300,24 @@ class Booz {
 		$stop_cursor = $query_count - 1;
 		try {
 			$this->pdo->beginTransaction();
-			for($i = 0;$i < $query_count; $i++) {
+			for ($i = 0; $i < $query_count; $i++) {
 				echo $queries[$i];
 				$stmt = $this->pdo->prepare($queries[$i]);
 				$stmt->execute();
-				if($i !== $stop_cursor) {
+				if ($i !== $stop_cursor) {
 					$stmt->closeCursor();
 				}
 			}
 			$this->pdo->commit();
 			return true;
-		} catch(PDOException $e) {
+		} catch (PDOException $e) {
 			$this->pdo->rollback();
 			die($e->getMessage());
 			echo $e->getMessage();
 		}
 	}
-	public function do_info($idx) {
+	public function do_info($idx)
+	{
 		try {
 			$this->pdo->beginTransaction();
 			$sql = "SELECT i_name FROM items WHERE i_type = $idx";
@@ -314,7 +325,7 @@ class Booz {
 			$stmt = $this->pdo->prepare($sql);
 			$stmt->execute();
 			echo "<ul class = 'itemList'>";
-			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+			while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->i_name;
 				echo "<li onclick = 'selectItemInfo(this)'>$sql_name</li>";
 			}
@@ -327,29 +338,83 @@ class Booz {
 			die($e->getMessage());
 		}
 	}
-	public function do_item_info($item_name) {
+	public function do_item_info($statsArray)
+	{
 		//echo "Item Name: $item_name";
+		//try {
+		//$this->pdo->beginTransaction();
+		//$sql = "call itemOrderedInfo('$item_name');";
+		//echo $sql;
+		//$stmt = $this->pdo->prepare($sql);
+		//$stmt->bindParam(':item_name', $item_name, PDO::PARAM_STR);
+		// $stmt->execute();
+		// while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+		// 	$sql_field_name = $result->Item_Name;
+		// 	$sql_field_bottle_quantity = $result->Bottle_Quantity;
+		// 	$sql_field_case_quantity = $result->Case_Quantity;
+		// 	$sql_field_total_quantity = $result->Total;
+		// 	$sql_field_datestart = date_format(date_create($result->Date_Start),'Y-m-d');
+		// 	$sql_field_dateend = date_format(date_create($result->Date_End),'Y-m-d');
+		// 	$sql_field_days_first_order = $result->Days_Since_First_Order;
+		// 	$sql_field_per_day = $result->Per_Day_Rate;
+		// 	$sql_field_per_unit = $result->Per_Unit_Rate;
+		// 	$sql_field_par = $result->Item_Par;
+		// 	$sql_field_type = $result->Item_Type;
+		// 	$sql_field_on_hand = $result->On_Hand;
+		// foreach ($statsArray as $current) {
+		// 	echo "<span>$current</span>";
+		// }
+
+		// echo "<table id='resultTable'>
+		// <thead class='resultHead'>
+		// 	<tr>
+		// 		<th class='col1'>Name</th>
+		// 		<th>bottleQuantity</th>
+		// 		<th>Case_Quantity</th>
+		// 		<th>total_quantity</th>
+		// 		<th>dateStart</th>
+		// 		<th>dateEnd</th>
+		// 		<th>days_since_first_order</th>
+		// 		<th>perDay</th>
+		// 		<th>perUnit</th>
+		// 		<th>Par</th>
+		// 		<th>type</th>
+		// 		<th>on_hand</th>
+		// 	</tr>
+		// <thead/>";
+
+		// echo "
+		// 	<tr class='itemRow'>
+		// 			<td class='col1'>$sql_field_name</td>
+		// 			<td>$sql_field_bottle_quantity</td>
+		// 			<td>$sql_field_case_quantity</td>
+		// 			<td>$sql_field_total_quantity</td>
+		// 			<td>$sql_field_datestart</td>
+		// 			<td>$sql_field_dateend</td>
+		// 			<td>$sql_field_days_first_order</td>
+		// 			<td>$sql_field_per_day</td>
+		// 			<td>$sql_field_per_unit</td>
+		// 			<td>$sql_field_par</td>
+		// 		<td>$sql_field_type</td>
+		// 		<td>$sql_field_on_hand</td>
+		// 		<td>$statsArray</td>
+		// 	</tr>
+		// </table>";
+		//}
+		//$stmt->closeCursor();
+		//$this->pdo->commit();
+		//return true;
+		//} catch (PDOException $e) {
+		//	$this->pdo->rollback();
+		//	die($e->getMessage());
+		// }
+	}
+	public function do_item_info_stats($statsArray)
+	{
+		//echo "Item Name: $statsArray";
 		try {
 			$this->pdo->beginTransaction();
-			$sql = "call itemOrderedInfo('$item_name');";
-			//echo $sql;
-			$stmt = $this->pdo->prepare($sql);
-			//$stmt->bindParam(':item_name', $item_name, PDO::PARAM_STR);
-			$stmt->execute();
-			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
-				$sql_field_name = $result->Item_Name;
-				$sql_field_bottle_quantity = $result->Bottle_Quantity;
-				$sql_field_case_quantity = $result->Case_Quantity;
-				$sql_field_total_quantity = $result->Total;
-				$sql_field_datestart = date_format(date_create($result->Date_Start),'Y-m-d');
-				$sql_field_dateend = date_format(date_create($result->Date_End),'Y-m-d');
-				$sql_field_days_first_order = $result->Days_Since_First_Order;
-				$sql_field_per_day = $result->Per_Day_Rate;
-				$sql_field_per_unit = $result->Per_Unit_Rate;
-				$sql_field_par = $result->Item_Par;
-				$sql_field_type = $result->Item_Type;
-				$sql_field_on_hand = $result->On_Hand;
-				echo "<table id='resultTable'>
+			echo "<table id='resultTable'>
 				<thead class='resultHead'>
 					<tr>
 						<th class='col1'>Name</th>
@@ -366,7 +431,31 @@ class Booz {
 						<th>on_hand</th>
 					</tr>
 				<thead/>";
-				
+				var_dump($statsArray);
+			//foreach ($statsArray as $item_name) {
+				//foreach ($statsArray as $key => $value) {
+					
+				echo $statsArray[0];
+
+				$sql = "call itemOrderedInfo('$item_name');";
+				//echo $sql;
+				$stmt = $this->pdo->prepare($sql);
+				$stmt->bindParam(':item_name', $item_name, PDO::PARAM_STR);
+				$stmt->execute();
+				while ($result = $stmt->fetch(PDO::FETCH_OBJ)) {
+					$sql_field_name = $result->Item_Name;
+					$sql_field_bottle_quantity = $result->Bottle_Quantity;
+					$sql_field_case_quantity = $result->Case_Quantity;
+					$sql_field_total_quantity = $result->Total;
+					$sql_field_datestart = date_format(date_create($result->Date_Start), 'Y-m-d');
+					$sql_field_dateend = date_format(date_create($result->Date_End), 'Y-m-d');
+					$sql_field_days_first_order = $result->Days_Since_First_Order;
+					$sql_field_per_day = $result->Per_Day_Rate;
+					$sql_field_per_unit = $result->Per_Unit_Rate;
+					$sql_field_par = $result->Item_Par;
+					$sql_field_type = $result->Item_Type;
+					$sql_field_on_hand = $result->On_Hand;
+				}
 				echo "
 					<tr class='itemRow'>
 							<td class='col1'>$sql_field_name</td>
@@ -383,7 +472,10 @@ class Booz {
 						<td>$sql_field_on_hand</td>
 					</tr>
 				</table>";
-			}
+				// foreach ($statsArray as $current) {
+				// 	echo "<span>$current</span>";
+				// }
+			//}
 			$stmt->closeCursor();
 			$this->pdo->commit();
 			return true;
@@ -397,32 +489,35 @@ class Booz {
 
 
 $new_query = new Booz();
-if($purpose == 1) {
+if ($purpose == 1) {
 	$new_query->do_booz_by_type($idx);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 2) {
+if ($purpose == 2) {
 	$new_query->process_count($namecount);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 3) {
+if ($purpose == 3) {
 	$new_query->get_order_by_dist($idx);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 4) {
+if ($purpose == 4) {
 	$new_query->displayTableForEdit($idx);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 5) {
+if ($purpose == 5) {
 	$new_query->updateItem($idx, $originalname, $changeArr);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 6) {
+if ($purpose == 6) {
 	$new_query->do_info($idx, $purpose);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-if($purpose == 7) {
+if ($purpose == 7) {
 	$new_query->do_item_info($item_name);
 	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
 }
-?>
+if ($purpose == 8) {
+	$new_query->do_item_info_stats($statsArray);
+	//echo "<div id = 'tmpDiv'><p> $purpose </p></div>";
+}
