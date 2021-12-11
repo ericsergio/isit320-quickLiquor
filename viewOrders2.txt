@@ -1,0 +1,726 @@
+CREATE TABLE `soInventory` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sku` varchar(9) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `price` decimal(15,2) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `discount` varchar(12) DEFAULT NULL,
+  `order_unit_id` int DEFAULT NULL,
+  `unit_quantity_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=428 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `coInventory` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sku` varchar(9) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `price` decimal(15,2) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `discount` varchar(12) DEFAULT NULL,
+  `order_unit_id` int DEFAULT NULL,
+  `unit_quantity_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=428 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `crInventory` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sku` varchar(9) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `price` decimal(15,2) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `discount` varchar(12) DEFAULT NULL,
+  `order_unit_id` int DEFAULT NULL,
+  `unit_quantity_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=428 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `yoInventory` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `sku` varchar(9) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `price` decimal(15,2) DEFAULT NULL,
+  `quantity` int DEFAULT NULL,
+  `type` int DEFAULT NULL,
+  `discount` varchar(12) DEFAULT NULL,
+  `order_unit_id` int DEFAULT NULL,
+  `unit_quantity_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=428 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (1,'so1001','Absolute_Vodka_1.5L_case',NULL,11,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (2,'so1002','Absolute_Vodka_1.5L',NULL,21,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (3,'so1003','Absolute_Vodka_1L_case',NULL,29,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (4,'so1004','Absolute_Vodka_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (5,'so1005','Absolute_Vodka_750ml_case',NULL,6,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (6,'so1006','Absolute_Vodka_750ml',NULL,11,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (7,'so1007','Bacardi_Rum_1.5L_case',NULL,19,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (8,'so1008','Bacardi_Rum_1.5L',NULL,8,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (9,'so1009','Bacardi_Rum_1L_case',NULL,19,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (10,'so1010','Bacardi_Rum_1L',NULL,23,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (11,'so1011','Bacardi_Rum_750ml_case',NULL,18,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (12,'so1012','Bacardi_Rum_750ml',NULL,1,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (13,'so1013','Baileys_Irish_Cream_1.5L_case',NULL,22,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (14,'so1014','Baileys_Irish_Cream_1.5L',NULL,18,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (15,'so1015','Baileys_Irish_Cream_1L_case',NULL,5,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (16,'so1016','Baileys_Irish_Cream_1L',NULL,1,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (17,'so1017','Baileys_Irish_Cream_750ml_case',NULL,23,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (18,'so1018','Baileys_Irish_Cream_750ml',NULL,4,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (19,'so1019','Beefeater_Gin_1.5L_case',NULL,12,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (20,'so1020','Beefeater_Gin_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (21,'so1021','Beefeater_Gin_1L_case',NULL,15,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (22,'so1022','Beefeater_Gin_1L',NULL,28,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (23,'so1023','Beefeater_Gin_750ml_case',NULL,16,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (24,'so1024','Beefeater_Gin_750ml',NULL,23,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (25,'so1025','Black_Velvet_Whiskey_1.5L_case',NULL,9,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (26,'so1026','Black_Velvet_Whiskey_1.5L',NULL,6,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (27,'so1027','Black_Velvet_Whiskey_1L_case',NULL,24,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (28,'so1028','Black_Velvet_Whiskey_1L',NULL,10,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (29,'so1029','Black_Velvet_Whiskey_750ml_case',NULL,0,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (30,'so1030','Black_Velvet_Whiskey_750ml',NULL,18,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (31,'so1031','Bulleit_Whiskey_1.5L_case',NULL,11,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (32,'so1032','Bulleit_Whiskey_1.5L',NULL,3,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (33,'so1033','Bulleit_Whiskey_1L_case',NULL,17,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (34,'so1034','Bulleit_Whiskey_1L',NULL,26,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (35,'so1035','Bulleit_Whiskey_750ml_case',NULL,24,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (36,'so1036','Bulleit_Whiskey_750ml',NULL,16,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (37,'so1037','Camerana_Tequila_1.5L_case',NULL,22,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (38,'so1038','Camerana_Tequila_1.5L',NULL,14,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (39,'so1039','Camerana_Tequila_1L_case',NULL,1,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (40,'so1040','Camerana_Tequila_1L',NULL,29,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (41,'so1041','Camerana_Tequila_750ml_case',NULL,12,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (42,'so1042','Camerana_Tequila_750ml',NULL,25,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (43,'so1043','Canadian_Club_Whiskey_1.5L_case',NULL,17,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (44,'so1044','Canadian_Club_Whiskey_1.5L',NULL,19,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (45,'so1045','Canadian_Club_Whiskey_1L_case',NULL,7,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (46,'so1046','Canadian_Club_Whiskey_1L',NULL,13,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (47,'so1047','Canadian_Club_Whiskey_750ml_case',NULL,3,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (48,'so1048','Canadian_Club_Whiskey_750ml',NULL,26,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (49,'so1049','Captain_Morgans_Rum_1.5L_case',NULL,5,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (50,'so1050','Captain_Morgans_Rum_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (51,'so1051','Captain_Morgans_Rum_1L_case',NULL,12,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (52,'so1052','Captain_Morgans_Rum_1L',NULL,19,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (53,'so1053','Captain_Morgans_Rum_750ml_case',NULL,20,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (54,'so1054','Captain_Morgans_Rum_750ml',NULL,25,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (55,'so1055','Chivas_Scotch_1.5L_case',NULL,11,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (56,'so1056','Chivas_Scotch_1.5L',NULL,5,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (57,'so1057','Chivas_Scotch_1L_case',NULL,4,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (58,'so1058','Chivas_Scotch_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (59,'so1059','Chivas_Scotch_750ml_case',NULL,22,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (60,'so1060','Chivas_Scotch_750ml',NULL,10,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (61,'so1061','Compari_1.5L_case',NULL,14,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (62,'so1062','Compari_1.5L',NULL,11,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (63,'so1063','Compari_1L_case',NULL,20,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (64,'so1064','Compari_1L',NULL,27,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (65,'so1065','Compari_750ml_case',NULL,16,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (66,'so1066','Compari_750ml',NULL,10,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (67,'so1067','Courvoisier_Cognac_1.5L_case',NULL,19,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (68,'so1068','Courvoisier_Cognac_1.5L',NULL,26,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (69,'so1069','Courvoisier_Cognac_1L_case',NULL,24,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (70,'so1070','Courvoisier_Cognac_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (71,'so1071','Courvoisier_Cognac_750ml_case',NULL,3,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (72,'so1072','Courvoisier_Cognac_750ml',NULL,0,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (73,'so1073','Crown_Whiskey_1.5L_case',NULL,4,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (74,'so1074','Crown_Whiskey_1.5L',NULL,23,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (75,'so1075','Crown_Whiskey_1L_case',NULL,20,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (76,'so1076','Crown_Whiskey_1L',NULL,21,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (77,'so1077','Crown_Whiskey_750ml_case',NULL,4,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (78,'so1078','Crown_Whiskey_750ml',NULL,26,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (79,'so1079','Cruzan_Black_Cherry_Rum_1.5L_case',NULL,3,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (80,'so1080','Cruzan_Black_Cherry_Rum_1.5L',NULL,29,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (81,'so1081','Cruzan_Black_Cherry_Rum_1L_case',NULL,24,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (82,'so1082','Cruzan_Black_Cherry_Rum_1L',NULL,2,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (83,'so1083','Cruzan_Black_Cherry_Rum_750ml_case',NULL,11,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (84,'so1084','Cruzan_Black_Cherry_Rum_750ml',NULL,17,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (85,'so1085','Dekuyper_Creme_De_Cocoa_1.5L_case',NULL,7,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (86,'so1086','Dekuyper_Creme_De_Cocoa_1.5L',NULL,18,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (87,'so1087','Dekuyper_Creme_De_Cocoa_1L_case',NULL,25,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (88,'so1088','Dekuyper_Creme_De_Cocoa_1L',NULL,20,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (89,'so1089','Dekuyper_Creme_De_Cocoa_750ml_case',NULL,8,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (90,'so1090','Dekuyper_Creme_De_Cocoa_750ml',NULL,12,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (91,'so1091','Dekuyper_Peach_1.5L_case',NULL,14,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (92,'so1092','Dekuyper_Peach_1.5L',NULL,6,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (93,'so1093','Dekuyper_Peach_1L_case',NULL,14,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (94,'so1094','Dekuyper_Peach_1L',NULL,14,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (95,'so1095','Dekuyper_Peach_750ml_case',NULL,13,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (96,'so1096','Dekuyper_Peach_750ml',NULL,23,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (97,'so1097','Dekuyper_Sour_Apple_1.5L_case',NULL,0,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (98,'so1098','Dekuyper_Sour_Apple_1.5L',NULL,23,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (99,'so1099','Dekuyper_Sour_Apple_1L_case',NULL,22,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (100,'so1100','Dekuyper_Sour_Apple_1L',NULL,14,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (101,'so1101','Dekuyper_Sour_Apple_750ml_case',NULL,5,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (102,'so1102','Dekuyper_Sour_Apple_750ml',NULL,9,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (103,'so1103','Dewers_Scotch_1.5L_case',NULL,14,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (104,'so1104','Dewers_Scotch_1.5L',NULL,11,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (105,'so1105','Dewers_Scotch_1L_case',NULL,3,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (106,'so1106','Dewers_Scotch_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (107,'so1107','Dewers_Scotch_750ml_case',NULL,24,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (108,'so1108','Dewers_Scotch_750ml',NULL,8,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (109,'so1109','Disaronno_Amaretto_1.5L_case',NULL,21,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (110,'so1110','Disaronno_Amaretto_1.5L',NULL,13,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (111,'so1111','Disaronno_Amaretto_1L_case',NULL,24,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (112,'so1112','Disaronno_Amaretto_1L',NULL,15,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (113,'so1113','Disaronno_Amaretto_750ml_case',NULL,23,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (114,'so1114','Disaronno_Amaretto_750ml',NULL,17,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (115,'so1115','Fleischmanns_Gin_1.5L_case',NULL,15,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (116,'so1116','Fleischmanns_Gin_1.5L',NULL,16,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (117,'so1117','Fleischmanns_Gin_1L_case',NULL,18,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (118,'so1118','Fleischmanns_Gin_1L',NULL,22,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (119,'so1119','Fleischmanns_Gin_750ml_case',NULL,3,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (120,'so1120','Fleischmanns_Gin_750ml',NULL,3,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (121,'so1121','Galliano_1.5L_case',NULL,8,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (122,'so1122','Galliano_1.5L',NULL,3,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (123,'so1123','Galliano_1L_case',NULL,3,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (124,'so1124','Galliano_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (125,'so1125','Galliano_750ml_case',NULL,27,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (126,'so1126','Galliano_750ml',NULL,6,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (127,'so1127','Glenlevit_Scotch_1.5L_case',NULL,16,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (128,'so1128','Glenlevit_Scotch_1.5L',NULL,2,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (129,'so1129','Glenlevit_Scotch_1L_case',NULL,16,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (130,'so1130','Glenlevit_Scotch_1L',NULL,3,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (131,'so1131','Glenlevit_Scotch_750ml_case',NULL,13,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (132,'so1132','Glenlevit_Scotch_750ml',NULL,24,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (133,'so1133','GoldSchlagger_1.5L_case',NULL,27,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (134,'so1134','GoldSchlagger_1.5L',NULL,13,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (135,'so1135','GoldSchlagger_1L_case',NULL,4,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (136,'so1136','GoldSchlagger_1L',NULL,20,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (137,'so1137','GoldSchlagger_750ml_case',NULL,23,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (138,'so1138','GoldSchlagger_750ml',NULL,9,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (139,'so1139','Grand_Marnier_Orange_Liqueur_1.5L_case',NULL,0,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (140,'so1140','Grand_Marnier_Orange_Liqueur_1.5L',NULL,16,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (141,'so1141','Grand_Marnier_Orange_Liqueur_1L_case',NULL,27,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (142,'so1142','Grand_Marnier_Orange_Liqueur_1L',NULL,22,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (143,'so1143','Grand_Marnier_Orange_Liqueur_750ml_case',NULL,8,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (144,'so1144','Grand_Marnier_Orange_Liqueur_750ml',NULL,29,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (145,'so1145','Green_Creme_De_Menthe_1.5L_case',NULL,29,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (146,'so1146','Green_Creme_De_Menthe_1.5L',NULL,22,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (147,'so1147','Green_Creme_De_Menthe_1L_case',NULL,21,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (148,'so1148','Green_Creme_De_Menthe_1L',NULL,29,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (149,'so1149','Green_Creme_De_Menthe_750ml_case',NULL,29,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (150,'so1150','Green_Creme_De_Menthe_750ml',NULL,2,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (151,'so1151','Grey_Goose_Vodka_1.5L_case',NULL,5,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (152,'so1152','Grey_Goose_Vodka_1.5L',NULL,12,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (153,'so1153','Grey_Goose_Vodka_1L_case',NULL,17,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (154,'so1154','Grey_Goose_Vodka_1L',NULL,2,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (155,'so1155','Grey_Goose_Vodka_750ml_case',NULL,24,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (156,'so1156','Grey_Goose_Vodka_750ml',NULL,2,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (157,'so1157','Hennessy_Cognac_1.5L_case',NULL,13,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (158,'so1158','Hennessy_Cognac_1.5L',NULL,19,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (159,'so1159','Hennessy_Cognac_1L_case',NULL,17,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (160,'so1160','Hennessy_Cognac_1L',NULL,3,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (161,'so1161','Hennessy_Cognac_750ml_case',NULL,22,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (162,'so1162','Hennessy_Cognac_750ml',NULL,24,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (163,'so1163','Hornitos_Tequila_1.5L_case',NULL,17,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (164,'so1164','Hornitos_Tequila_1.5L',NULL,10,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (165,'so1165','Hornitos_Tequila_1L_case',NULL,8,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (166,'so1166','Hornitos_Tequila_1L',NULL,0,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (167,'so1167','Hornitos_Tequila_750ml_case',NULL,19,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (168,'so1168','Hornitos_Tequila_750ml',NULL,17,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (169,'so1169','Jagermeister_1.5L_case',NULL,15,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (170,'so1170','Jagermeister_1.5L',NULL,24,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (171,'so1171','Jagermeister_1L_case',NULL,12,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (172,'so1172','Jagermeister_1L',NULL,10,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (173,'so1173','Jagermeister_750ml_case',NULL,6,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (174,'so1174','Jagermeister_750ml',NULL,16,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (175,'so1175','Jamesons_Whiskey_1.5L_case',NULL,29,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (176,'so1176','Jamesons_Whiskey_1.5L',NULL,23,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (177,'so1177','Jamesons_Whiskey_1L_case',NULL,7,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (178,'so1178','Jamesons_Whiskey_1L',NULL,17,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (179,'so1179','Jamesons_Whiskey_750ml_case',NULL,19,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (180,'so1180','Jamesons_Whiskey_750ml',NULL,17,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (181,'so1181','Jim_Beam_Bourbon_1.5L_case',NULL,6,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (182,'so1182','Jim_Beam_Bourbon_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (183,'so1183','Jim_Beam_Bourbon_1L_case',NULL,27,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (184,'so1184','Jim_Beam_Bourbon_1L',NULL,29,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (185,'so1185','Jim_Beam_Bourbon_750ml_case',NULL,0,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (186,'so1186','Jim_Beam_Bourbon_750ml',NULL,26,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (187,'so1187','Johnny_Walker_Black_Scotch_1.5L_case',NULL,4,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (188,'so1188','Johnny_Walker_Black_Scotch_1.5L',NULL,23,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (189,'so1189','Johnny_Walker_Black_Scotch_1L_case',NULL,9,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (190,'so1190','Johnny_Walker_Black_Scotch_1L',NULL,28,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (191,'so1191','Johnny_Walker_Black_Scotch_750ml_case',NULL,1,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (192,'so1192','Johnny_Walker_Black_Scotch_750ml',NULL,24,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (193,'so1193','Johnny_Walker_Red_Scotch_1.5L_case',NULL,2,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (194,'so1194','Johnny_Walker_Red_Scotch_1.5L',NULL,21,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (195,'so1195','Johnny_Walker_Red_Scotch_1L_case',NULL,11,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (196,'so1196','Johnny_Walker_Red_Scotch_1L',NULL,7,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (197,'so1197','Johnny_Walker_Red_Scotch_750ml_case',NULL,26,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (198,'so1198','Johnny_Walker_Red_Scotch_750ml',NULL,23,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (199,'so1199','Jose_Quervo_Tequila_1.5L_case',NULL,22,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (200,'so1200','Jose_Quervo_Tequila_1.5L',NULL,12,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (201,'so1201','Jose_Quervo_Tequila_1L_case',NULL,25,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (202,'so1202','Jose_Quervo_Tequila_1L',NULL,0,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (203,'so1203','Jose_Quervo_Tequila_750ml_case',NULL,18,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (204,'so1204','Jose_Quervo_Tequila_750ml',NULL,14,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (205,'so1205','Kahlua_Coffee_Liquer_1.5L_case',NULL,17,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (206,'so1206','Kahlua_Coffee_Liquer_1.5L',NULL,2,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (207,'so1207','Kahlua_Coffee_Liquer_1L_case',NULL,19,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (208,'so1208','Kahlua_Coffee_Liquer_1L',NULL,19,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (209,'so1209','Kahlua_Coffee_Liquer_750ml_case',NULL,9,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (210,'so1210','Kahlua_Coffee_Liquer_750ml',NULL,17,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (211,'so1211','Ketel_One_Vodka_1.5L_case',NULL,8,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (212,'so1212','Ketel_One_Vodka_1.5L',NULL,21,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (213,'so1213','Ketel_One_Vodka_1L_case',NULL,19,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (214,'so1214','Ketel_One_Vodka_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (215,'so1215','Ketel_One_Vodka_750ml_case',NULL,19,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (216,'so1216','Ketel_One_Vodka_750ml',NULL,10,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (217,'so1217','Knob_Creek_Whiskey_1.5L_case',NULL,15,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (218,'so1218','Knob_Creek_Whiskey_1.5L',NULL,5,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (219,'so1219','Knob_Creek_Whiskey_1L_case',NULL,26,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (220,'so1220','Knob_Creek_Whiskey_1L',NULL,10,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (221,'so1221','Knob_Creek_Whiskey_750ml_case',NULL,3,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (222,'so1222','Knob_Creek_Whiskey_750ml',NULL,2,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (223,'so1223','Makers_Mark_Bourbon_1.5L_case',NULL,24,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (224,'so1224','Makers_Mark_Bourbon_1.5L',NULL,4,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (225,'so1225','Makers_Mark_Bourbon_1L_case',NULL,10,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (226,'so1226','Makers_Mark_Bourbon_1L',NULL,28,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (227,'so1227','Makers_Mark_Bourbon_750ml_case',NULL,19,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (228,'so1228','Makers_Mark_Bourbon_750ml',NULL,7,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (229,'so1229','Malibu_Rum_1.5L_case',NULL,11,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (230,'so1230','Malibu_Rum_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (231,'so1231','Malibu_Rum_1L_case',NULL,20,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (232,'so1232','Malibu_Rum_1L',NULL,7,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (233,'so1233','Malibu_Rum_750ml_case',NULL,12,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (234,'so1234','Malibu_Rum_750ml',NULL,22,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (235,'so1235','Midori_Melon_1.5L_case',NULL,14,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (236,'so1236','Midori_Melon_1.5L',NULL,14,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (237,'so1237','Midori_Melon_1L_case',NULL,18,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (238,'so1238','Midori_Melon_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (239,'so1239','Midori_Melon_750ml_case',NULL,6,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (240,'so1240','Midori_Melon_750ml',NULL,11,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (241,'so1241','Monarch_Rum_1.5L_case',NULL,6,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (242,'so1242','Monarch_Rum_1.5L',NULL,3,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (243,'so1243','Monarch_Rum_1L_case',NULL,23,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (244,'so1244','Monarch_Rum_1L',NULL,21,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (245,'so1245','Monarch_Rum_750ml_case',NULL,14,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (246,'so1246','Monarch_Rum_750ml',NULL,27,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (247,'so1247','Montezuma_Tequila_1.5L_case',NULL,19,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (248,'so1248','Montezuma_Tequila_1.5L',NULL,25,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (249,'so1249','Montezuma_Tequila_1L_case',NULL,7,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (250,'so1250','Montezuma_Tequila_1L',NULL,7,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (251,'so1251','Montezuma_Tequila_750ml_case',NULL,27,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (252,'so1252','Montezuma_Tequila_750ml',NULL,25,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (253,'so1253','Moonshine_1.5L_case',NULL,22,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (254,'so1254','Moonshine_1.5L',NULL,20,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (255,'so1255','Moonshine_1L_case',NULL,22,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (256,'so1256','Moonshine_1L',NULL,5,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (257,'so1257','Moonshine_750ml_case',NULL,0,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (258,'so1258','Moonshine_750ml',NULL,9,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (259,'so1259','Patron_Tequila_1.5L_case',NULL,5,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (260,'so1260','Patron_Tequila_1.5L',NULL,28,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (261,'so1261','Patron_Tequila_1L_case',NULL,8,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (262,'so1262','Patron_Tequila_1L',NULL,21,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (263,'so1263','Patron_Tequila_750ml_case',NULL,1,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (264,'so1264','Patron_Tequila_750ml',NULL,10,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (265,'so1265','Pendletons_Whiskey_1.5L_case',NULL,16,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (266,'so1266','Pendletons_Whiskey_1.5L',NULL,18,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (267,'so1267','Pendletons_Whiskey_1L_case',NULL,1,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (268,'so1268','Pendletons_Whiskey_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (269,'so1269','Pendletons_Whiskey_750ml_case',NULL,2,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (270,'so1270','Pendletons_Whiskey_750ml',NULL,12,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (271,'so1271','Rumplemintz_1.5L_case',NULL,14,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (272,'so1272','Rumplemintz_1.5L',NULL,25,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (273,'so1273','Rumplemintz_1L_case',NULL,2,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (274,'so1274','Rumplemintz_1L',NULL,11,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (275,'so1275','Rumplemintz_750ml_case',NULL,4,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (276,'so1276','Rumplemintz_750ml',NULL,18,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (277,'so1277','Saphire_Gin_1.5L_case',NULL,4,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (278,'so1278','Saphire_Gin_1.5L',NULL,22,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (279,'so1279','Saphire_Gin_1L_case',NULL,3,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (280,'so1280','Saphire_Gin_1L',NULL,12,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (281,'so1281','Saphire_Gin_750ml_case',NULL,27,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (282,'so1282','Saphire_Gin_750ml',NULL,1,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (283,'so1283','Sauza_Tequila_1.5L_case',NULL,29,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (284,'so1284','Sauza_Tequila_1.5L',NULL,5,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (285,'so1285','Sauza_Tequila_1L_case',NULL,3,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (286,'so1286','Sauza_Tequila_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (287,'so1287','Sauza_Tequila_750ml_case',NULL,11,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (288,'so1288','Sauza_Tequila_750ml',NULL,27,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (289,'so1289','Seagrams_7_Whiskey_1.5L_case',NULL,3,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (290,'so1290','Seagrams_7_Whiskey_1.5L',NULL,2,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (291,'so1291','Seagrams_7_Whiskey_1L_case',NULL,14,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (292,'so1292','Seagrams_7_Whiskey_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (293,'so1293','Seagrams_7_Whiskey_750ml_case',NULL,0,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (294,'so1294','Seagrams_7_Whiskey_750ml',NULL,21,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (295,'so1295','Skoll_Vodka_1.5L_case',NULL,0,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (296,'so1296','Skoll_Vodka_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (297,'so1297','Skoll_Vodka_1L_case',NULL,0,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (298,'so1298','Skoll_Vodka_1L',NULL,3,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (299,'so1299','Skoll_Vodka_750ml_case',NULL,2,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (300,'so1300','Skoll_Vodka_750ml',NULL,27,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (301,'so1301','Smirnoff_Blueberry_Vodka_1.5L_case',NULL,23,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (302,'so1302','Smirnoff_Blueberry_Vodka_1.5L',NULL,18,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (303,'so1303','Smirnoff_Blueberry_Vodka_1L_case',NULL,17,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (304,'so1304','Smirnoff_Blueberry_Vodka_1L',NULL,21,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (305,'so1305','Smirnoff_Blueberry_Vodka_750ml_case',NULL,7,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (306,'so1306','Smirnoff_Blueberry_Vodka_750ml',NULL,10,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (307,'so1307','Smirnoff_Citrus_Vodka_1.5L_case',NULL,28,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (308,'so1308','Smirnoff_Citrus_Vodka_1.5L',NULL,26,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (309,'so1309','Smirnoff_Citrus_Vodka_1L_case',NULL,24,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (310,'so1310','Smirnoff_Citrus_Vodka_1L',NULL,10,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (311,'so1311','Smirnoff_Citrus_Vodka_750ml_case',NULL,24,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (312,'so1312','Smirnoff_Citrus_Vodka_750ml',NULL,14,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (313,'so1313','Smirnoff_Orange_Vodka_1.5L_case',NULL,23,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (314,'so1314','Smirnoff_Orange_Vodka_1.5L',NULL,23,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (315,'so1315','Smirnoff_Orange_Vodka_1L_case',NULL,16,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (316,'so1316','Smirnoff_Orange_Vodka_1L',NULL,15,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (317,'so1317','Smirnoff_Orange_Vodka_750ml_case',NULL,19,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (318,'so1318','Smirnoff_Orange_Vodka_750ml',NULL,1,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (319,'so1319','Smirnoff_Pomegranite_Vodka_1.5L_case',NULL,20,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (320,'so1320','Smirnoff_Pomegranite_Vodka_1.5L',NULL,1,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (321,'so1321','Smirnoff_Pomegranite_Vodka_1L_case',NULL,29,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (322,'so1322','Smirnoff_Pomegranite_Vodka_1L',NULL,29,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (323,'so1323','Smirnoff_Pomegranite_Vodka_750ml_case',NULL,26,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (324,'so1324','Smirnoff_Pomegranite_Vodka_750ml',NULL,13,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (325,'so1325','Smirnoff_Raspberry_Vodka_1.5L_case',NULL,22,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (326,'so1326','Smirnoff_Raspberry_Vodka_1.5L',NULL,19,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (327,'so1327','Smirnoff_Raspberry_Vodka_1L_case',NULL,20,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (328,'so1328','Smirnoff_Raspberry_Vodka_1L',NULL,24,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (329,'so1329','Smirnoff_Raspberry_Vodka_750ml_case',NULL,9,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (330,'so1330','Smirnoff_Raspberry_Vodka_750ml',NULL,2,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (331,'so1331','Smirnoff_Root_Beer_Vodka_1.5L_case',NULL,13,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (332,'so1332','Smirnoff_Root_Beer_Vodka_1.5L',NULL,7,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (333,'so1333','Smirnoff_Root_Beer_Vodka_1L_case',NULL,10,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (334,'so1334','Smirnoff_Root_Beer_Vodka_1L',NULL,13,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (335,'so1335','Smirnoff_Root_Beer_Vodka_750ml_case',NULL,2,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (336,'so1336','Smirnoff_Root_Beer_Vodka_750ml',NULL,1,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (337,'so1337','Smirnoff_Strawberry_Vodka_1.5L_case',NULL,25,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (338,'so1338','Smirnoff_Strawberry_Vodka_1.5L',NULL,16,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (339,'so1339','Smirnoff_Strawberry_Vodka_1L_case',NULL,28,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (340,'so1340','Smirnoff_Strawberry_Vodka_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (341,'so1341','Smirnoff_Strawberry_Vodka_750ml_case',NULL,8,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (342,'so1342','Smirnoff_Strawberry_Vodka_750ml',NULL,23,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (343,'so1343','Smirnoff_Vanilla_Vodka_1.5L_case',NULL,20,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (344,'so1344','Smirnoff_Vanilla_Vodka_1.5L',NULL,2,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (345,'so1345','Smirnoff_Vanilla_Vodka_1L_case',NULL,18,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (346,'so1346','Smirnoff_Vanilla_Vodka_1L',NULL,4,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (347,'so1347','Smirnoff_Vanilla_Vodka_750ml_case',NULL,16,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (348,'so1348','Smirnoff_Vanilla_Vodka_750ml',NULL,14,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (349,'so1349','Smirnoff_Vodka_1.5L_case',NULL,2,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (350,'so1350','Smirnoff_Vodka_1.5L',NULL,13,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (351,'so1351','Smirnoff_Vodka_1L_case',NULL,28,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (352,'so1352','Smirnoff_Vodka_1L',NULL,6,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (353,'so1353','Smirnoff_Vodka_750ml_case',NULL,28,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (354,'so1354','Smirnoff_Vodka_750ml',NULL,25,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (355,'so1355','Smirnoff_Whip_Cream_Vodka_1.5L_case',NULL,13,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (356,'so1356','Smirnoff_Whip_Cream_Vodka_1.5L',NULL,10,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (357,'so1357','Smirnoff_Whip_Cream_Vodka_1L_case',NULL,8,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (358,'so1358','Smirnoff_Whip_Cream_Vodka_1L',NULL,18,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (359,'so1359','Smirnoff_Whip_Cream_Vodka_750ml_case',NULL,2,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (360,'so1360','Smirnoff_Whip_Cream_Vodka_750ml',NULL,25,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (361,'so1361','St_Germain_Liqueur_1.5L_case',NULL,28,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (362,'so1362','St_Germain_Liqueur_1.5L',NULL,4,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (363,'so1363','St_Germain_Liqueur_1L_case',NULL,6,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (364,'so1364','St_Germain_Liqueur_1L',NULL,0,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (365,'so1365','St_Germain_Liqueur_750ml_case',NULL,26,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (366,'so1366','St_Germain_Liqueur_750ml',NULL,13,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (367,'so1367','Stoli_Vodka_1.5L_case',NULL,25,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (368,'so1368','Stoli_Vodka_1.5L',NULL,8,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (369,'so1369','Stoli_Vodka_1L_case',NULL,14,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (370,'so1370','Stoli_Vodka_1L',NULL,14,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (371,'so1371','Stoli_Vodka_750ml_case',NULL,6,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (372,'so1372','Stoli_Vodka_750ml',NULL,19,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (373,'so1373','Tanquery_Gin_1.5L_case',NULL,3,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (374,'so1374','Tanquery_Gin_1.5L',NULL,19,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (375,'so1375','Tanquery_Gin_1L_case',NULL,15,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (376,'so1376','Tanquery_Gin_1L',NULL,15,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (377,'so1377','Tanquery_Gin_750ml_case',NULL,0,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (378,'so1378','Tanquery_Gin_750ml',NULL,22,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (379,'so1379','Triple_Sec_Orange_Liqueur_1.5L_case',NULL,26,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (380,'so1380','Triple_Sec_Orange_Liqueur_1.5L',NULL,0,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (381,'so1381','Triple_Sec_Orange_Liqueur_1L_case',NULL,29,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (382,'so1382','Triple_Sec_Orange_Liqueur_1L',NULL,14,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (383,'so1383','Triple_Sec_Orange_Liqueur_750ml_case',NULL,15,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (384,'so1384','Triple_Sec_Orange_Liqueur_750ml',NULL,26,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (385,'so1385','VO_Whiskey_1.5L_case',NULL,16,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (386,'so1386','VO_Whiskey_1.5L',NULL,22,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (387,'so1387','VO_Whiskey_1L_case',NULL,6,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (388,'so1388','VO_Whiskey_1L',NULL,0,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (389,'so1389','VO_Whiskey_750ml_case',NULL,15,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (390,'so1390','VO_Whiskey_750ml',NULL,19,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (391,'so1391','Wild_Turkey_Whiskey_1.5L_case',NULL,10,1,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (392,'so1392','Wild_Turkey_Whiskey_1.5L',NULL,1,1,NULL,1,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (393,'so1393','Wild_Turkey_Whiskey_1L_case',NULL,3,1,NULL,2,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (394,'so1394','Wild_Turkey_Whiskey_1L',NULL,24,1,NULL,1,3);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (395,'so1395','Wild_Turkey_Whiskey_750ml_case',NULL,8,1,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (396,'so1396','Wild_Turkey_Whiskey_750ml',NULL,22,1,NULL,1,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (397,'so1397','_14_Hands_Cab_750ml_case',NULL,21,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (398,'so1398','Brown_Family_Cabernet_750ml_case',NULL,16,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (399,'so1399','Chateau_Merlot_750ml_case',NULL,20,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (400,'so1400','Chateau_Mimi_Chardonnay_750ml_case',NULL,3,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (401,'so1401','Chateau_Reisling_750ml_case',NULL,22,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (402,'so1402','Chloe_Rose_750ml_case',NULL,21,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (403,'so1403','Colum_Composition_Red_Blend_750ml_case',NULL,14,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (404,'so1404','Copper_Ridge_White_Zin_750ml_case',NULL,5,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (405,'so1405','Duck_Pond_Pinot_Noir_750ml_case',NULL,11,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (406,'so1406','Ecco_Pino_Grigio_750ml_case',NULL,5,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (407,'so1407','Jacobs_Creek_Shiraz_Cab_Blend_750ml_case',NULL,23,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (408,'so1408','KJ_Chard_750ml_case',NULL,27,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (409,'so1409','Prosecco_750ml_case',NULL,21,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (410,'so1410','Worlds_Edge_Cab_750ml_case',NULL,17,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (411,'so1411','Worlds_Edge_Chard_750ml_case',NULL,21,2,NULL,2,2);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (412,'so1412','_14_Hands_Cab_1.5L_case',NULL,12,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (413,'so1413','Brown_Family_Cabernet_1.5L_case',NULL,7,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (414,'so1414','Chateau_Merlot_1.5L_case',NULL,12,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (415,'so1415','Chateau_Mimi_Chardonnay_1.5L_case',NULL,7,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (416,'so1416','Chateau_Reisling_1.5L_case',NULL,13,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (417,'so1417','Chloe_Rose_1.5L_case',NULL,3,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (418,'so1418','Colum_Composition_Red_Blend_1.5L_case',NULL,5,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (419,'so1419','Copper_Ridge_White_Zin_1.5L_case',NULL,25,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (420,'so1420','Duck_Pond_Pinot_Noir_1.5L_case',NULL,20,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (421,'so1421','Ecco_Pino_Grigio_1.5L_case',NULL,15,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (422,'so1422','Jacobs_Creek_Shiraz_Cab_Blend_1.5L_case',NULL,9,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (423,'so1423','KJ_Chard_1.5L_case',NULL,1,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (424,'so1424','Prosecco_1.5L_case',NULL,6,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (425,'so1425','Worlds_Edge_Cab_1.5L_case',NULL,12,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (426,'so1426','Worlds_Edge_Chard_1.5L_case',NULL,15,2,NULL,2,4);
+INSERT INTO soInventory (id, sku, name, price, quantity, type, discount, order_unit_id, unit_quantity_id) VALUES (427,'so1427','Ginger_Beer',NULL,3,5,NULL,1,7);
+
+
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (1,'co1001','MacNaughtons_Whiskey_1.5L_case',NULL,25,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (2,'co1002','MacNaughtons_Whiskey_1.5L',NULL,15,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (3,'co1003','MacNaughtons_Whiskey_1L_case',NULL,25,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (4,'co1004','MacNaughtons_Whiskey_1L',NULL,29,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (5,'co1005','MacNaughtons_Whiskey_750ml_case',NULL,11,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (6,'co1006','MacNaughtons_Whiskey_750ml',NULL,24,1,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (7,'co1007','Amstel_Light',NULL,13,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (8,'co1008','Angry_Orchard',NULL,26,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (9,'co1009','Corona',NULL,11,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (10,'co1010','Corona_Light',NULL,8,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (11,'co1011','Fosters_Oil',NULL,3,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (12,'co1012','Guiness',NULL,0,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (13,'co1013','Heinekin',NULL,17,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (14,'co1014','MGD',NULL,29,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (15,'co1015','Miller_Light',NULL,17,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (16,'co1016','Newcastle',NULL,1,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (17,'co1017','Sam_Adams_76_Cans',NULL,28,3,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (18,'co1018','Blue_Moon',NULL,27,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (19,'co1019','Coors_Light',NULL,23,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (20,'co1020','Fosters',NULL,18,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (21,'co1021','Pyramid_Amber',NULL,0,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (22,'co1022','Sam_Adams',NULL,18,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (23,'co1023','Sam_Adams_Seasonal',NULL,0,4,NULL);
+INSERT INTO coInventory (id, sku, name, price, quantity, type, discount) VALUES (24,'co1024','Red_Bull',NULL,16,5,NULL);
+
+
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (1,'cr1001','B_B_Liqueur_1.5L_case',NULL,23,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (2,'cr1002','B_B_Liqueur_1.5L',NULL,28,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (3,'cr1003','B_B_Liqueur_1L_case',NULL,22,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (4,'cr1004','B_B_Liqueur_1L',NULL,13,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (5,'cr1005','B_B_Liqueur_750ml_case',NULL,3,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (6,'cr1006','B_B_Liqueur_750ml',NULL,6,1,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (7,'cr1007','Budweiser',NULL,11,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (8,'cr1008','Elysian_Dragonstooth',NULL,0,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (9,'cr1009','Elysian_Dragonstooth_Stout',NULL,12,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (10,'cr1010','Mich_Ultra',NULL,10,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (11,'cr1011','ODouls',NULL,21,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (12,'cr1012','Redbridge',NULL,26,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (13,'cr1013','Stella_Artois',NULL,29,3,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (14,'cr1014','Bloomin_Blonde',NULL,25,4,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (15,'cr1015','Bud_Light',NULL,4,4,NULL);
+INSERT INTO crInventory (id, sku, name, price, quantity, type, discount) VALUES (16,'cr1016','Immortal_IPA',NULL,11,4,NULL);
+
+
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (1,'yo1001','Chambord_1.5L_case',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (2,'yo1002','Chambord_1.5L',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (3,'yo1003','Chambord_1L_case',NULL,16,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (4,'yo1004','Chambord_1L',NULL,2,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (5,'yo1005','Chambord_750ml_case',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (6,'yo1006','Chambord_750ml',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (7,'yo1007','Cinzano_Dry_Vermouth_1.5L_case',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (8,'yo1008','Cinzano_Dry_Vermouth_1.5L',NULL,27,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (9,'yo1009','Cinzano_Dry_Vermouth_1L_case',NULL,6,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (10,'yo1010','Cinzano_Dry_Vermouth_1L',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (11,'yo1011','Cinzano_Dry_Vermouth_750ml_case',NULL,24,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (12,'yo1012','Cinzano_Dry_Vermouth_750ml',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (13,'yo1013','Cinzano_Sweet_Vermouth_1.5L_case',NULL,29,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (14,'yo1014','Cinzano_Sweet_Vermouth_1.5L',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (15,'yo1015','Cinzano_Sweet_Vermouth_1L_case',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (16,'yo1016','Cinzano_Sweet_Vermouth_1L',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (17,'yo1017','Cinzano_Sweet_Vermouth_750ml_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (18,'yo1018','Cinzano_Sweet_Vermouth_750ml',NULL,8,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (19,'yo1019','Cointreau_Orange_Liqueur_1.5L_case',NULL,2,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (20,'yo1020','Cointreau_Orange_Liqueur_1.5L',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (21,'yo1021','Cointreau_Orange_Liqueur_1L_case',NULL,5,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (22,'yo1022','Cointreau_Orange_Liqueur_1L',NULL,28,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (23,'yo1023','Cointreau_Orange_Liqueur_750ml_case',NULL,1,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (24,'yo1024','Cointreau_Orange_Liqueur_750ml',NULL,27,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (25,'yo1025','Drambuie_1.5L_case',NULL,6,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (26,'yo1026','Drambuie_1.5L',NULL,19,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (27,'yo1027','Drambuie_1L_case',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (28,'yo1028','Drambuie_1L',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (29,'yo1029','Drambuie_750ml_case',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (30,'yo1030','Drambuie_750ml',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (31,'yo1031','El_Himador_Tequila_1.5L_case',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (32,'yo1032','El_Himador_Tequila_1.5L',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (33,'yo1033','El_Himador_Tequila_1L_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (34,'yo1034','El_Himador_Tequila_1L',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (35,'yo1035','El_Himador_Tequila_750ml_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (36,'yo1036','El_Himador_Tequila_750ml',NULL,26,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (37,'yo1037','Fireball_Whiskey_1.5L_case',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (38,'yo1038','Fireball_Whiskey_1.5L',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (39,'yo1039','Fireball_Whiskey_1L_case',NULL,12,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (40,'yo1040','Fireball_Whiskey_1L',NULL,7,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (41,'yo1041','Fireball_Whiskey_750ml_case',NULL,10,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (42,'yo1042','Fireball_Whiskey_750ml',NULL,19,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (43,'yo1043','Frangelico_1.5L_case',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (44,'yo1044','Frangelico_1.5L',NULL,2,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (45,'yo1045','Frangelico_1L_case',NULL,13,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (46,'yo1046','Frangelico_1L',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (47,'yo1047','Frangelico_750ml_case',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (48,'yo1048','Frangelico_750ml',NULL,29,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (49,'yo1049','Hendricks_Gin_1.5L_case',NULL,14,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (50,'yo1050','Hendricks_Gin_1.5L',NULL,10,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (51,'yo1051','Hendricks_Gin_1L_case',NULL,5,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (52,'yo1052','Hendricks_Gin_1L',NULL,9,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (53,'yo1053','Hendricks_Gin_750ml_case',NULL,17,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (54,'yo1054','Hendricks_Gin_750ml',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (55,'yo1055','Herradura_Tequila_1.5L_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (56,'yo1056','Herradura_Tequila_1.5L',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (57,'yo1057','Herradura_Tequila_1L_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (58,'yo1058','Herradura_Tequila_1L',NULL,16,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (59,'yo1059','Herradura_Tequila_750ml_case',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (60,'yo1060','Herradura_Tequila_750ml',NULL,22,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (61,'yo1061','Jack_Daniels_Bourbon_1.5L_case',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (62,'yo1062','Jack_Daniels_Bourbon_1.5L',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (63,'yo1063','Jack_Daniels_Bourbon_1L_case',NULL,13,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (64,'yo1064','Jack_Daniels_Bourbon_1L',NULL,8,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (65,'yo1065','Jack_Daniels_Bourbon_750ml_case',NULL,12,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (66,'yo1066','Jack_Daniels_Bourbon_750ml',NULL,24,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (67,'yo1067','Jack_Honey_1.5L_case',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (68,'yo1068','Jack_Honey_1.5L',NULL,0,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (69,'yo1069','Jack_Honey_1L_case',NULL,22,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (70,'yo1070','Jack_Honey_1L',NULL,28,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (71,'yo1071','Jack_Honey_750ml_case',NULL,13,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (72,'yo1072','Jack_Honey_750ml',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (73,'yo1073','Korbel_Brandy_1.5L_case',NULL,14,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (74,'yo1074','Korbel_Brandy_1.5L',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (75,'yo1075','Korbel_Brandy_1L_case',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (76,'yo1076','Korbel_Brandy_1L',NULL,7,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (77,'yo1077','Korbel_Brandy_750ml_case',NULL,8,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (78,'yo1078','Korbel_Brandy_750ml',NULL,26,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (79,'yo1079','Macallan_Scotch_1.5L_case',NULL,28,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (80,'yo1080','Macallan_Scotch_1.5L',NULL,22,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (81,'yo1081','Macallan_Scotch_1L_case',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (82,'yo1082','Macallan_Scotch_1L',NULL,14,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (83,'yo1083','Macallan_Scotch_750ml_case',NULL,1,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (84,'yo1084','Macallan_Scotch_750ml',NULL,10,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (85,'yo1085','MacGregor_Scotch_1.5L_case',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (86,'yo1086','MacGregor_Scotch_1.5L',NULL,28,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (87,'yo1087','MacGregor_Scotch_1L_case',NULL,17,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (88,'yo1088','MacGregor_Scotch_1L',NULL,16,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (89,'yo1089','MacGregor_Scotch_750ml_case',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (90,'yo1090','MacGregor_Scotch_750ml',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (91,'yo1091','Myers_Dark_Rum_1.5L_case',NULL,2,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (92,'yo1092','Myers_Dark_Rum_1.5L',NULL,7,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (93,'yo1093','Myers_Dark_Rum_1L_case',NULL,24,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (94,'yo1094','Myers_Dark_Rum_1L',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (95,'yo1095','Myers_Dark_Rum_750ml_case',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (96,'yo1096','Myers_Dark_Rum_750ml',NULL,4,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (97,'yo1097','Royal_Gentleman_Whiskey_1.5L_case',NULL,2,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (98,'yo1098','Royal_Gentleman_Whiskey_1.5L',NULL,13,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (99,'yo1099','Royal_Gentleman_Whiskey_1L_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (100,'yo1100','Royal_Gentleman_Whiskey_1L',NULL,25,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (101,'yo1101','Royal_Gentleman_Whiskey_750ml_case',NULL,14,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (102,'yo1102','Royal_Gentleman_Whiskey_750ml',NULL,20,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (103,'yo1103','Sailor_Jerrys_Rum_1.5L_case',NULL,12,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (104,'yo1104','Sailor_Jerrys_Rum_1.5L',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (105,'yo1105','Sailor_Jerrys_Rum_1L_case',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (106,'yo1106','Sailor_Jerrys_Rum_1L',NULL,12,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (107,'yo1107','Sailor_Jerrys_Rum_750ml_case',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (108,'yo1108','Sailor_Jerrys_Rum_750ml',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (109,'yo1109','Sambuca_Romana_1.5L_case',NULL,10,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (110,'yo1110','Sambuca_Romana_1.5L',NULL,18,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (111,'yo1111','Sambuca_Romana_1L_case',NULL,3,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (112,'yo1112','Sambuca_Romana_1L',NULL,0,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (113,'yo1113','Sambuca_Romana_750ml_case',NULL,13,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (114,'yo1114','Sambuca_Romana_750ml',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (115,'yo1115','Southern_Comfort_1.5L_case',NULL,12,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (116,'yo1116','Southern_Comfort_1.5L',NULL,1,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (117,'yo1117','Southern_Comfort_1L_case',NULL,19,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (118,'yo1118','Southern_Comfort_1L',NULL,17,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (119,'yo1119','Southern_Comfort_750ml_case',NULL,5,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (120,'yo1120','Southern_Comfort_750ml',NULL,14,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (121,'yo1121','Titos_Vodka_1.5L_case',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (122,'yo1122','Titos_Vodka_1.5L',NULL,1,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (123,'yo1123','Titos_Vodka_1L_case',NULL,24,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (124,'yo1124','Titos_Vodka_1L',NULL,8,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (125,'yo1125','Titos_Vodka_750ml_case',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (126,'yo1126','Titos_Vodka_750ml',NULL,16,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (127,'yo1127','Woodford_Reserve_Whiskey_1.5L_case',NULL,9,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (128,'yo1128','Woodford_Reserve_Whiskey_1.5L',NULL,28,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (129,'yo1129','Woodford_Reserve_Whiskey_1L_case',NULL,21,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (130,'yo1130','Woodford_Reserve_Whiskey_1L',NULL,0,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (131,'yo1131','Woodford_Reserve_Whiskey_750ml_case',NULL,26,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (132,'yo1132','Woodford_Reserve_Whiskey_750ml',NULL,7,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (133,'yo1133','Yukon_Jack_1.5L_case',NULL,15,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (134,'yo1134','Yukon_Jack_1.5L',NULL,16,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (135,'yo1135','Yukon_Jack_1L_case',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (136,'yo1136','Yukon_Jack_1L',NULL,11,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (137,'yo1137','Yukon_Jack_750ml_case',NULL,23,1,NULL);
+INSERT INTO yoInventory (id, sku, name, price, quantity, type, discount) VALUES (138,'yo1138','Yukon_Jack_750ml',NULL,13,1,NULL);
+
+
+CREATE VIEW `so_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 1));
+
+CREATE VIEW `co_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 2));
+
+CREATE VIEW `cr_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 3));
+
+CREATE VIEW `yo_order2` AS 
+SELECT `i`.`i_name` AS `name`,
+`i`.`default_order` AS `default`,
+`ou`.`ou_name` AS `unit`,
+`uq`.`uq_name` AS `unit_type`,
+`i`.`on_hand` AS `current`,
+`inv`.`id` AS `InventoryId`
+FROM (((`items` `i` 
+JOIN `order_units` `ou` ON((`i`.`d_order_type` = `ou`.`ou_id`))) 
+JOIN `unit_quantity` `uq` ON((`i`.`d_order_quantity` = `uq`.`uq_id`)))
+JOIN `soInventory` `inv` ON((`inv`.`order_unit_id` = `ou`.`ou_id`) 
+AND (`inv`.`unit_quantity_id` = `uq`.`uq_id`) 
+AND (`inv`.`name` LIKE CONCAT('%',`i`.`i_name`, '%'))))
+WHERE ((`i`.`on_hand` < `i`.`i_par`) AND (`i`.`i_dist` = 4));
