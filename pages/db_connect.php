@@ -1,6 +1,6 @@
 ﻿<?php
 
-$connection = @mysqli_connect('127.0.0.1','ericsergio','password');
+$connection = @mysqli_connect('127.0.0.1','kyleh','1234');
 	//or die(mysqli_error());
 
 if ($connection) {

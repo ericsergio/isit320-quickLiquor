@@ -1,20 +1,66 @@
-.resultWrapper{
-	position: relative;
-	width:90%;
+.resultWrapper {
+  position: relative;
+  width: 90%;
 }
 
-.resultWrapper .itemList{
-	display: grid;
-	grid-gap:7px;
-	grid-template-columns: 20% 20% 20% 20%;
-	margin: 3% 3% 10% 3%;
+.resultWrapper .itemList {
+  display: grid;
+  grid-gap: 7px;
+  grid-template-columns: 20% 20% 20% 20%;
+  margin: 3% 3% 10% 3%;
 }
 
-.resultWrapper .itemList li{
-	list-style-type: none;
-	/*border: solid 2px #000000;*/
-	padding: 14px 4px 14px 4px;
-	font-family: Bookman;
-	font-size: 16px;
-	word-wrap: break-word;
+.resultWrapper .itemList li {
+  list-style-type: none;
+  /*border: solid 2px #000000;*/
+  padding: 14px 4px 14px 4px;
+  font-family: Bookman;
+  font-size: 16px;
+  word-wrap: break-word;
 }
+
+.resultTable {
+  display: grid;
+  grid-gap: 7px;
+  grid-template-columns: 20% 20% 20% 20%;
+  margin: 3% 3% 10% 3%;
+  list-style-type: none;
+  /*border: solid 2px #000000;*/
+  padding: 14px 4px 14px 4px;
+  font-family: Bookman;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+.clickedItemInfo {
+  background: #006aff;
+  color: #ffffff;
+  font-family: Helvetica;
+}
+#submitItemInfo {
+  background: linear-gradient(to top, #000000 0%, #003399 70%);
+  color: #ffffff;
+  font-family: Helvetica;
+  font-variant: small-caps;
+  font-size: 14px;
+  width: 20%;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0.45em 2.85em 0.25em 2.85em;
+  margin: 2% 0% 1% 50%;
+  text-align: center;
+  clear: both;
+}
+#statsInstruction {
+	background: linear-gradient(to top, #000000 0%, #003399 70%);
+	color: #ffffff;
+	font-family: Helvetica;
+	font-variant: small-caps;
+	font-size: 14px;
+	width: 20%;
+	height: 40px;
+	border-radius: 5px;
+	padding: 0.45em 2.85em 0.25em 2.85em;
+	margin: 2% 0% 1% 50%;
+	text-align: center;
+	clear: both;
+  }
