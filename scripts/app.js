@@ -1,4 +1,4 @@
-class ItemRow {
+class Item_Row {
 	constructor(i_name, i_dist, i_type, i_par, d_order_type, d_order_quantity, default_order, on_hand) {
 		this.i_name = i_name;
 		this.i_dist = i_dist;
@@ -27,7 +27,7 @@ class ToggleMenu {
 	constructor(evenOdd) {
 		this.evenOdd = evenOdd;
 	}
-};
+}
 
 ToggleMenu.init = new ToggleMenu(0);
 
@@ -44,26 +44,26 @@ function checkDisplay () {
 		$($('.typeList').children()[i]).addClass('selected');
 		$('.typeList').children().not('.selected').css('display', 'none');
 		$('.navWrapper .navList').after('<div id = "mobileMenuBtn" onclick = "mobileDisplayDists()"><img src = "images/menu.png" ></div>');
-	};
+	}
 	return chkDisplay;
-};
+}
 
 window.onload = checkDisplay();
 function ProcessItems(name, count) {
 	this.name = name;
 	this.count = count || 0;
-};
+}
 
 function doItems() {
 	$('.itemList').children("li").each(function () {
 		$(this).addClass('liResult');
-	})
+	});
 }
 
 //Gives input to the 1st input on the count page after a type is clicked.
 function doFocus() {
 	$(".itemList").children("input:first").focus();
-};
+}
 
 $(document).ready(function() {
 	$('.countFilters').children().on('click', function() {
@@ -75,7 +75,7 @@ $(document).ready(function() {
 				var liItem = $(this);
 				var inpItem = document.getElementById($(this).text());
 				liItem.hide();
-				$(inpItem).hide()
+				$(inpItem).hide();
 			}						
 		});
 	});
@@ -100,7 +100,7 @@ $(document).ready(function () {
 			var purposeTypes = [1, 4, 6];
 			var purposePages = ["index.html", "managedb.html", "info.html"];
 			//I did it this way so I could add more pages that could have page specific php functions from the same php class depending on which html page the below ajax request is run from.
-			for(var p in purposePages) {
+			for( p in purposePages) {
 				if(currPage === purposePages[p]) {
 					var purposeIdx = purposePages.indexOf(currPage);
 					var purpose = purposeTypes[purposeIdx];
@@ -108,9 +108,6 @@ $(document).ready(function () {
 					if(purposeIdx === 0) {
 						var postPath = "pages/fn.php";
 					} else {
-						//because both managedb.html and index.html use this the relative path is different based on the 
-						//purpose its being used for. It should use the below path if this is being used from managedb.html 
-						//above if index.html
 						var postPath = "fn.php";
 					}
 				}
@@ -140,16 +137,16 @@ $(document).ready(function () {
 									$('div.updateWrapper').prepend("<ul class = 'keyValList'></ul>");
 								}
 								$('.resultWrapper').hide();
-								ItemRow.selectedItem = new ItemRow(valArr[0], valArr[1], valArr[2], valArr[3],
+								Item_Row.selectedItem = new Item_Row(valArr[0], valArr[1], valArr[2], valArr[3],
 									valArr[4], valArr[5], valArr[6], valArr[7]);
-								var iRow = ItemRow.selectedItem;
-								ItemRow.itemCopy = new ItemRow(
+								var iRow = Item_Row.selectedItem;
+								Item_Row.itemCopy = new Item_Row(
 									iRow.i_name, iRow.i_dist, iRow.i_type, iRow.i_par, iRow.d_order_type, 
 									iRow.d_order_quantity, iRow.default_order, iRow.on_hand
 									);
-								for(var p in ItemRow.selectedItem) {
+								for(p in Item_Row.selectedItem) {
 									$('ul.keyValList').append(
-										`<li>${p}</li><li id = ${p} onclick = "updateVal($(this))">${ItemRow.selectedItem[p]}</li>`
+										`<li>${p}</li><li id = ${p} onclick = "updateVal($(this))">${Item_Row.selectedItem[p]}</li>`
 									);									
 								}
 								$('div.updateWrapper').css({
@@ -176,47 +173,47 @@ function updatePageDiv(orig, field, changed) {
 	switch(field) {
 		case 1:
 			if(changed.length <= 0) {
-				changed = ItemRow.selectedItem.i_name;
+				changed = Item_Row.selectedItem.i_name;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.i_name = changed;
+			Item_Row.selectedItem.i_name = changed;
 			break;
 		case 2:
 			$('#i_dist').text(changed);
-			ItemRow.selectedItem.i_dist = changed.substr(-1, 1);
+			Item_Row.selectedItem.i_dist = changed.substr(-1, 1);
 			break;
 		case 3:
 			$('#i_type').text(changed);
-			ItemRow.selectedItem.i_type = changed.substr(-1, 1);
+			Item_Row.selectedItem.i_type = changed.substr(-1, 1);
 			break;
 		case 4:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.i_par;
+				changed = Item_Row.selectedItem.i_par;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.i_par = Number(changed);
+			Item_Row.selectedItem.i_par = Number(changed);
 			break;
 		case 5:
 			$('#d_order_type').text(changed);
-			ItemRow.selectedItem.d_order_type = changed.substr(-1, 1);
+			Item_Row.selectedItem.d_order_type = changed.substr(-1, 1);
 			break;
 		case 6:
 			$('#d_order_quantity').text(changed);
-			ItemRow.selectedItem.d_order_quantity = changed.substr(-1, 1);
+			Item_Row.selectedItem.d_order_quantity = changed.substr(-1, 1);
 			break;
 		case 7:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.default_order;
+				changed = Item_Row.selectedItem.default_order;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.default_order = Number(changed);
+			Item_Row.selectedItem.default_order = Number(changed);
 			break;
 		case 8:
 			if(changed.length < 1) {
-				changed = ItemRow.selectedItem.on_hand;
+				changed = Item_Row.selectedItem.on_hand;
 			}
 			orig.replaceWith(changed);
-			ItemRow.selectedItem.on_hand = Number(changed);
+			Item_Row.selectedItem.on_hand = Number(changed);
 			break;
 		}
 }
@@ -225,7 +222,7 @@ function updatePageDiv(orig, field, changed) {
 to do: later - the updates only work for the items table right now. So if an incorrect item is entered in the ordered
 table, you need to update the incorrect field in MySQL++++++come back to this+++++++ It will require you to add new 
 constructors for the objects representing the row to be updated. For the table that is working (the items table), refer
-to the class ItemRow that is currently at the very top of the page (app.js). Then, you will need to add the new object
+to the class Item_Row that is currently at the very top of the page (app.js). Then, you will need to add the new object
 instantiations in the doTable(tblRowID) function followed by creating another object copy so that the original values
 are stored along with the new values because the original values are being referenced in the SQL update function. In the
 switch below, the cases are specific to the column names in the Items table so do something clever to differenciate
@@ -378,12 +375,12 @@ posted params:
 */
 function confirmChange() {
 	var changes = [];
-	for(var p in ItemRow.itemCopy) {
-		if(ItemRow.itemCopy[p] !== ItemRow.selectedItem[p]) {
-			changes.push(`${p} : ${ItemRow.selectedItem[p]}`);
+	for(p in Item_Row.itemCopy) {
+		if(Item_Row.itemCopy[p] !== Item_Row.selectedItem[p]) {
+			changes.push(`${p} : ${Item_Row.selectedItem[p]}`);
 		}
 	}
-	var origName = ItemRow.itemCopy.i_name;
+	var origName = Item_Row.itemCopy.i_name;
 	var idx = $('.selected').index() + 1;
 	var purpose = 5;
 	console.log(`fieldChangeToFromValue : ${changes[0]}`);
@@ -392,12 +389,12 @@ function confirmChange() {
 		//Need to display error here if one occurs via alert or something
 		console.log("ajax response : " + data);
 	});
-	$('div.updateWrapper').css("visibility", "hidden");
+	$('div.updateWrapper').css("visibility", "hidden");	
 	$('.resultWrapper').show();
 	$('#filterList').show();
 	$('.selected').show();
 	$('.typeLeftRight li img').show();
-};
+}
 
 /*
 Applies to Exit button on manageDB page. Should probably move this function to manageDb.js.
@@ -427,7 +424,7 @@ function doFooter() {
 			'top':'531px'
 		});			
 	}
-};
+}
 
 //Purpose #3
 /*
@@ -447,7 +444,6 @@ $(document).ready(function () {
 		//in landscape view
 		//doFooter();
 	}
-	// sidebar click
 	$('.dist').each(function () {
 		$(this)[0].addEventListener("click", function doDist(distName) {
 			$('.resultWrapper').children().remove();
@@ -488,11 +484,11 @@ function processCount() {
 		}
 	})
 	var props = [];
-	for(var p in ProcessItems) {
+	for(p in ProcessItems) {
 		props.push(ProcessItems[p])
 	}
 	var name_count = [];
-	for(var p in props) {
+	for(p in props) {
 		name_count.push(props[p].name + "--" + props[p].count);
 	}
 	var name_count_str = name_count.join();
@@ -501,7 +497,7 @@ function processCount() {
 	.done(function(data) {
 		console.log("ajax response : " + data);
 	});
-};
+}
 
 /*
 This is for mobile layouts.
@@ -525,7 +521,7 @@ function incrementIdx() {
 		'display':'grid',
 		'grid-template-columns':'20%'
 	});
-};
+}
 
 /*
 This is for mobile layouts.
@@ -550,7 +546,7 @@ function decrementIdx() {
 		'display':'grid',
 		'grid-template-columns':'20%'
 	});
-};
+}
 
 
 /*
@@ -594,6 +590,6 @@ function mobileDisplayDists() {
 		$('.selected').show();
 		$('.typeLeftRight').show();
 	};
-};
+}
 
 

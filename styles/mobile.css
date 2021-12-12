@@ -1,6 +1,3 @@
-/**
- * @author Eric Sergio <eric.sergio@bellevuecollege.edu>
- */
 /* iPhone portrait */
 @media only screen and (orientation: portrait) {
 	#displayIndicator {
@@ -35,7 +32,8 @@
 		margin: 10% 5% 160px 0;
 	}
 
-	.typeLeftRight{
+	.typeLeftRight {
+		visibility: visible;
 		display:grid;
 		list-style-type: none;
 		grid-gap:50%;
