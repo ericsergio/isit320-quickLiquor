@@ -8,7 +8,7 @@
 		<link rel='stylesheet' href='styles/main.css'>
 		<link rel='stylesheet' href='styles/mobile.css'>
 		<script type = 'text/javascript' src = 'scripts/jQuery.js'></script>
-		
+		<script src="https://kit.fontawesome.com/2cef02184c.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div id = "displayIndicator" style = "display:none;"></div>
@@ -18,18 +18,17 @@
 					<li id = 'manageDbLink'><a href="pages/managedb.html">Manage DB</a></li>
 					<li id = 'infoLink'><a href="pages/info.html">Item Info</a></li>
 					<li id = 'aboutLink'><a href="pages/about.html">About</a></li>
-					
 				</ul>
 			</div>
 		</nav>
 		<!--<div class = "typeBar">-->
 			<div class = "typeWrapper">
 				<ul class = "typeList">
-					<li id = "countLiquor" class = "type selected">Liquor<div id="showLiquorInfo" class="typeInfo">?</div></li>
-					<li id = "countWine" class = "type">Wine<div id="showWineInfo" class="typeInfo">?</div></li>
-					<li id = "countBottles" class = "type">Bottles<div id="showBottlesInfo" class="typeInfo">?</div></li>
-					<li id = "countKegs" class = "type">Kegs<div id="showKegsInfo" class="typeInfo">?</div></li>
-					<li id = "countNA" class = "type">NA<div id="showNAInfo" class="typeInfo">?</div></li>
+					<li id = "countLiquor" class="type selected">Liquor<div id="showLiquorInfo" class="typeInfo">?</div></li>
+					<li id = "countWine" class="type">Wine<div id="showWineInfo" class="typeInfo">?</div></li>
+					<li id = "countBottles" class="type">Bottles<div id="showBottlesInfo" class="typeInfo">?</div></li>
+					<li id = "countKegs" class="type">Kegs<div id="showKegsInfo" class="typeInfo">?</div></li>
+					<li id = "countNA" class="type">NA<div id="showNAInfo" class="typeInfo">?</div></li>
 				</ul>
 				<ul class="typeInfoList">
 					<div id="liquorInfo"><li>Displays the liquor count list</li></div>
@@ -51,6 +50,11 @@
 						<li id="processCount" value = "Submit" onclick = "processCount()">Submit</li>
 					</ul>
 				</div>					
+			</div>
+			<div id="hoverExplanation">
+				<!-- <div id="closeExplanation"><p>✕</p></div> -->
+				<div id="closeExplanation"><i class="far fa-times-circle"></i></div>
+				Hover on the <b>?</b> beside buttons to see what the button is for
 			</div>
 		<!--</div>-->
 		<!--<div class = "distBar">-->

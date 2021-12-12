@@ -9802,5 +9802,11 @@ jQuery(function(){
 			jQuery(infoCases[i]).hide();
 		});
 	}
-
+	jQuery('#closeExplanation').on('click', function(){
+		jQuery('#hoverExplanation').hide();
+	});
+	jQuery('html').on('click', function(){
+		jQuery('#hoverExplanation').hide();
+	});
+	
 });

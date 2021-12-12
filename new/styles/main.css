@@ -265,54 +265,96 @@ tbody tr:nth-child(even) {
 .typeInfo {
   color: #ffefaf;
   background-color: tan;
-  font-size: 2.5vw;
-  margin-right: 1vw;
-  margin-top: 2vh;
+  font-size: 2vw;
+  /* margin-right: 1vw;
+  margin-top: 2vh; */
   width: 1.2vw;
   height: 6vh;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 50%;
-  display: inline-block;
+  display: inline;
   display: none;
   padding-left: 0.3vw;
-  z-index: 10;
-}
-.typeList p {
-  display: none;
+  z-index: 5;
 }
 
+#showSoInfo,
+#showCoInfo,
+#showCrInfo,
+#showYoInfo {
+  height: 3.5vh;
+  padding-bottom: 0.38em;
+}
 #countLiquor:hover #showLiquorInfo {
   display: inline-block;
+  margin: 0;
 }
 #countWine:hover #showWineInfo {
   display: inline-block;
+  margin: 0;
 }
 #countBottles:hover #showBottlesInfo {
   display: inline-block;
+  margin: 0;
 }
 #countKegs:hover #showKegsInfo {
+  margin: 0;
   display: inline-block;
 }
 #countNA:hover #showNAInfo {
+  margin: 0;
   display: inline-block;
 }
 
 #distSo:hover #showSoInfo {
+  margin: 0;
   display: inline-block;
 }
 #distCo:hover #showCoInfo {
+  margin: 0;
   display: inline-block;
 }
 #distCr:hover #showCrInfo {
+  margin: 0;
   display: inline-block;
 }
 #distYo:hover #showYoInfo {
+  margin: 0;
   display: inline-block;
 }
 
 .typeInfo:active {
   color: firebrick;
   display: inline-block;
+}
+
+#hoverExplanation {
+  position: absolute;
+  left: 15%;
+  top: 45%;
+  font-size: 1.8em;
+  background-color: #ffefaf;
+  padding: 1.5em;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 30px;
+  z-index: 4;
+}
+
+#closeExplanation {
+  position: absolute;
+  right: 0.5vw;
+  top: 0.3vh;
+  border-radius: 1rem;
+  height: 1em;
+  width: 1em;
+  cursor: pointer;
+}
+
+#closeExplanation i {
+  display: inline;
+  margin-left: 0.35vw;
+  font-size: x-large;
+  font-weight: 800;
 }
 
 .typeInfoList,
@@ -354,4 +396,18 @@ tbody tr:nth-child(even) {
 }
 #filterYoInfo {
   top: 21vh;
+}
+
+@media only screen and (max-width: 1064px) and (min-width: 963px) {
+  #showSoInfo,
+  #showCoInfo,
+  #showCrInfo,
+  #showYoInfo {
+    position: absolute;
+    left: 3vw;
+  }
+  .resultFilterInfoList {
+    right: 40vw;
+    top: 37vh;
+  }
 }
