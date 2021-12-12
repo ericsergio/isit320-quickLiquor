@@ -37,7 +37,7 @@ class Booz {
 		$conStr = sprintf("mysql:host=%s;dbname=%s",$host, $db);
 		//echo $conStr;
 		try {
-			$this->pdo = new PDO($conStr, $user, $pass);
+			$this->pdo = new PDO($conStr, 'cis', 'password');
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
@@ -104,15 +104,17 @@ class Booz {
 			$stmt = $this->pdo->prepare($sql_order_views[$idx]);
 			$stmt->execute();
 			$count = 1;
-			echo "<table id = 'orderTable'><thead><th>Item</th><th>Order</th><th>Unit</th><th>Unit Type</th><th>On Hand</th><th>Inv ID</th></thead>";
+			echo "<table id = 'orderTable'><tbody><thead><th>Item</th><th>Order</th><th>Unit</th><th>Unit Type</th><th>On Hand</th><th>Distributer Id</th></thead>";
 			while($result = $stmt->fetch(PDO::FETCH_OBJ)) {
 				$sql_name = $result->name;
 				$sql_default = $result->default;
 				$sql_unit = $result->unit;
 				$sql_unit_type = $result->unit_type;
 				$sql_current = $result->current;
-				$sql_inv_id = $result->InventoryId;
-				echo "<tr><td>$sql_name</td><td>$sql_default</td><td>$sql_unit</td><td>$sql_unit_type</td><td>$sql_current</td><td>$sql_inv_id</td></tr>";
+				$sql_inv_id = $result->InventoryId;				
+				
+				echo "<tr><td>" . $sql_name . "</td><td>" . $sql_default . "</td><td>" . $sql_unit . "</td><td>" . $sql_unit_type . "</td><td>" . $sql_current . "</td><td>" . $sql_inv_id . "</td></tr>";
+				
 				$count += 1;
 			}
 			echo "<p id = 'count'>$count</p>";
@@ -128,7 +130,7 @@ class Booz {
 	public function displayTableForEdit($idx) {
 		try {
 			$idx = $idx - 1;
-			$sql_manageable_tables = ["SELECT * from i_Details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
+			$sql_manageable_tables = ["SELECT * from i_details", "SELECT * from dists", "SELECT * from order_units", "SELECT * from ordered", "SELECT * from unit_quantity"];
 			$this->pdo->beginTransaction();
 			$stmt = $this->pdo->prepare($sql_manageable_tables[$idx]);
 			$stmt->execute();
