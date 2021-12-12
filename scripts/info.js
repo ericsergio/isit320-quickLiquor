@@ -1,77 +1,40 @@
-class Item_Stats {
-  constructor(
-    i_name,
-    i_dist,
-    i_type,
-    i_par,
-    d_order_type,
-    d_order_quantity,
-    default_order,
-    on_hand
-  ) {
-    this.i_name = i_name;
-    this.i_dist = i_dist;
-    this.i_type = i_type;
-    this.i_par = i_par;
-    this.d_order_type = d_order_type;
-    this.d_order_quantity = d_order_quantity;
-    this.default_order = default_order;
-    this.on_hand = on_hand;
-  }
-}
-
-// function doItemInfo(selectedItem) {
-//   var item_name = $(selectedItem).text();
-//   var purpose = 7;
-//   $(".itemList").remove();
-//   $.post("fn.php", { purpose: purpose, item_name: item_name }).done(function (
-//     data
-//   ) {
-//     $(".resultWrapper").append(data);
-//     console.log("ajax response : " + data);
-//   });
-// }
-
-function doItemInfo(selectedItem) {
-  var values = [];
-  $(".clickedItemInfo").each(function () {
-    values.push($(this).text());
-  });
-  //I have the values pushed into an array, now all I need to do is send them to PHP, but I'm having a bit of trouble
-  //values.push($(".clickedItemInfo").each().text());
-
-  console.log(values);
-  var item_name = $(selectedItem).text();
-  var purpose = 7;
-
-  $.post("fn.php", {
-    purpose: purpose,
-    values: values,
-    item_name: selectedItem,
-  }).done(function (data) {
-    $(".resultWrapper").append(data);
-    console.log("ajax response : " + data);
+//Function to select or deselect lis
+function selectItemInfo() {
+  $(function () {
+    //doubleclick will remove LI from clickedItemInfo Class
+    $(".itemList li").on("dblclick", function () {
+      $(this).removeClass("clickedItemInfo");
+    });
+    //click will add LI to clickedItemInfo class (highlights the li Blue)
+    $(".itemList li").on("click", function () {
+      $(this).addClass("clickedItemInfo"); // LINE MODIFIED
+    });
   });
 }
-
 function doItemInfoStats() {
-  //I have the values pushed into statsArray
-  var purpose = 8;
-  var data = $(this).serializeArray();
-  var itemNames = [];
+  //hide the original .itemList li's
+  $(".itemList").hide();
+  if ($("#resultTable").length) {
+    $("#resultTable").remove();
+  }
+  //I have the values pushed into itemNames
+  const purpose = 7;
+  let data = $(this).serializeArray();
+  let itemNames = [];
+  //Grab clicked LI's
   $(".clickedItemInfo").each(function () {
     itemNames.push($(this).text());
   });
-
-  console.log(itemNames);
-
+  //Loop through all values in throwaway array + push new array into data var to prepare for AJAX call;
   for (i = 0; i < itemNames.length; i++) {
     data.push({
+      //One Dimension Array trick https://stackoverflow.com/questions/9001526/send-array-with-ajax-to-php-script
+      //faking a key value pair so it doesn't throw an exception when it lands on fn.php... see above SO post.
       name: "itemNames[]", // These blank empty brackets are imp!
       value: itemNames[i],
     });
   }
-
+  //ajax call to post to fn.php which calls purpose 7 -> see do_item_info_stats
   $.post("fn.php", {
     url: jQuery(this).attr("action"),
     dataType: "json",
@@ -80,13 +43,5 @@ function doItemInfoStats() {
   }).done(function (data) {
     $(".resultWrapper").append(data);
     console.log("ajax response : " + data);
-  });
-}
-
-function selectItemInfo() {
-  $(function () {
-    $(".itemList li").on("click", function () {
-      $(this).addClass("clickedItemInfo"); // LINE MODIFIED
-    });
   });
 }
