@@ -593,3 +593,86 @@ function mobileDisplayDists() {
 }
 
 
+/*
+This needs to get fixed.
+Works well unless display switches from landscape to portrail or vice versa without page being reloaded but 
+otherwise gets all fuckered up.
+*/
+function mobileDisplayDists() {
+	ToggleMenu.init.evenOdd += 1;
+	console.log(ToggleMenu.init.evenOdd);
+	if((ToggleMenu.init.evenOdd % 2) === 1) {
+		$('.distWrapper').css({
+			'visibility':'visible',
+			'backgroundColor':'#fff',
+			'display': 'block',
+			'left': '10%',
+			'top': '20%',
+			'height': '25%',
+			'width': '80%',
+			'z-index':'3'
+		});
+		$('.distList').css({
+			'display':'grid',
+			'grid-template-columns':'50% 50%',
+			'grid-column-gap': '10%',
+			'font-size':'1em',
+			'color':'#000',
+			'margin':'5% 15% 15% 0%'
+		});
+		$('.dist').css({
+			'padding': '2% 5% 2% 5%',
+			'color': '#000'
+		});
+		$('.resultWrapper').hide();
+		$('.typeLeftRight').hide();
+		$('.selected').hide();
+	} else {
+		$('.distWrapper').fadeOut(1000);
+		$('.distWrapper').css('visibility', 'hidden');
+		$('.resultWrapper').show();
+		$('.selected').show();
+		$('.typeLeftRight').show();
+	};
+}
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// For main page (index.html)
+// Question mark feature
+showInfoCases = ['#showLiquorInfo', '#showWineInfo', '#showBottlesInfo', '#showKegsInfo', '#showNAInfo', '#showSoInfo', '#showCoInfo', '#showCrInfo', '#showYoInfo']
+infoCases = ['#liquorInfo', '#wineInfo', '#bottlesInfo', '#kegsInfo', '#NAInfo', '#filterSoInfo', '#filterCoInfo', '#filterCrInfo', '#filterYoInfo']
+
+
+jQuery(function(){
+	for(let i = 0; i < showInfoCases.length; i++){
+		jQuery(showInfoCases[i]).on('mouseover', function(){
+			jQuery(infoCases[i]).show();
+		});
+		jQuery(showInfoCases[i]).on('mouseout', function(){
+			jQuery(infoCases[i]).hide();
+		});
+	}
+	jQuery('#closeExplanation').on('click', function(){
+		jQuery('#hoverExplanation').hide();
+	});
+	jQuery('html').on('click', function(){
+		jQuery('#hoverExplanation').hide();
+	});
+});
