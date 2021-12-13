@@ -1,3 +1,5 @@
+DROP PROCEDURE itemOrderedInfo;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `itemOrderedInfo`(o_name_param varchar(45))
 begin
 declare bottle_order_quantity int;
@@ -80,4 +82,5 @@ per_unit_rate as 'Per_Unit_Rate',
 item_par as 'Item_Par',
 item_type as 'Item_Type',
 item_on_hand as 'On_Hand';
-end
+end$$
+DELIMITER ;
