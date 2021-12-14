@@ -208,12 +208,16 @@ const doInStockItems = async () => {
 };
 
 const apiQuery = async () => {
-    await doTempTbl();
-    await sendOrder();
-    doButtons();
-    await doTotal();
-    await doOutOfStockItems();
-    await doInStockItems();
+    try {
+        await doTempTbl();
+        await sendOrder();
+        doButtons();
+        await doTotal();
+        await doOutOfStockItems();
+        await doInStockItems();
+    } catch (e) {
+        console.log(e);
+    }
 };
 
 //http://104.42.49.64/
