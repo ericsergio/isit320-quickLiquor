@@ -486,3 +486,31 @@ tbody tr:nth-child(even) {
 	}
   }
   
+  .teamPageDiv{
+	position: absolute;
+	top:25%;
+	left:30%;
+	right:30%;
+	background-color: rgb(0, 60, 102);
+	padding:2% 2% 5% 2%;
+	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+
+.headerAndImage{
+	text-align: center;
+	font-family:Helvetica;
+	font-variant: small-caps;
+	color: white;
+	font-size:22px;
+}
+
+.teamPageText{
+	text-align: center;
+	font-family:Helvetica;
+	color:white;
+	font-size:22px;
+}
+
+.teamName{
+	text-align: center;
+}
