@@ -19,7 +19,7 @@ function doItemInfoStats() {
     }
 
     //remove instructions for padding issues
-    $(".statsInstruction").remove();
+    $("#statsInstruction").remove();
     //I have the values pushed into itemNames
     const purpose = 7;
     let data = $(this).serializeArray();
