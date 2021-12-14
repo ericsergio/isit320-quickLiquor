@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<head>
+		<title>Team Page</title>
+		<meta name=”description” content=”Description of page here.”/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Eric Sergio">
+		<meta charset="UTF-8">
+		<link rel='stylesheet' href='../styles/main.css'>
+		<link rel='stylesheet' href='../styles/info.css'>
+		<link rel='stylesheet' href='../styles/mobile.css'>
+		<script type = 'text/javascript' src = '../scripts/jQuery.js'></script>
+    </head>
+    <body>
+		<div id = "displayIndicator" style = "display:none;"></div>
+		<nav role="navigation" class="navBar">
+			<div class="navWrapper">
+				<ul class="navList">
+					<li id = 'homeLink'><a href="../index.html">Home</a></li>
+					<li id = 'manageDbLink'><a href="managedb.html">Manage DB</a></li>
+					<li id = 'aboutLink'><a href="about.html">About</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class = "typeBar">
+			<div class = "typeWrapper">
+				<ul class = "typeList">
+					<li id = "infoLiquor" class = "type selected">Liquor</li>
+					<li id = "infoWine" class = "type">Wine</li>
+					<li id = "infoBottles" class = "type">Bottles</li>
+					<li id = "infoKegs" class = "type">Kegs</li>
+					<li id = "infoNA" class = "type">NA</li>
+				</ul>
+				<ul class = "typeLeftRight" style = "visibility: hidden;">
+					<li id = 'infoTypeMoveLeft'><img src = "../images/arrowLeft.png" onclick = "decrementIdx()"></li>
+					<li id = 'infoTypeMoveRight'><img src = "../images/arrowRight.png" onclick = "incrementIdx()"></li>
+				</ul>
+			</div>
+		<!--</div>-->
+		<div class = "results">
+			<div class = "resultWrapper">
+			</div>
+        </div>
+        
+        <div class="teamPageDiv">
+            <div class="headerAndImage">
+                <h1>The QuickLiquor Team</h1>
+                <img src="../images/logo.png"> 
+            </div>
+            
+            <div class="teamPageText">
+                <div>Eric Sergio
+                    <p>Technical Lead, Communications</p>
+                    <a href="">My Page</a>
+                </div>
+                <div></br></br>Kyle Hantula
+                    <p>Merge Management</p>
+                    <a href="http://invokesolutions.hopto.org">My Page</a>
+                   
+                </div>
+                <div></br></br>Jerry Lin
+                    <p>Scribe</p>
+                    <a href="http://chiaweil.ddns.net">My Page</a>                    
+                </div>
+                <div></br></br>Kyu Kim
+                    <p>Project Lead, Documentarian</p>
+                    <a href="http://isit320kimk.ddns.net">My Page</a>
+                </div>
+                <div></br></br>Daniel Lee
+                    <p>Technical Advisor</p>
+                </div>
+            </div>
+
+            <a href="../index.html" class="teamPageText"></br></br></br>Return to Home</a>
+
+        </div>
+		<!-- <footer>
+			<p class = "contact">
+				<span class = "copyright">&copy; 2020 Technology Student</span> 
+				<span class = "contactAddress"> 19** 18*nd ST SW Lynnwood, WA 98037</span>
+				<span class = "contactPhone">(425)236-**** </span>
+				<span class = "contactWebsite">
+					<a href="#">www.ericsergio.com</a>
+				</span>
+				<a href="mailto:nobody@nowhere.com "><span class = "contactEmail">ericdsergio87@icloud.com</span></a>
+			</p>
+		</footer> -->
+		<script type = 'text/javascript' src = '../scripts/app.js'></script>
+		<script type = 'text/javascript' src = '../scripts/info.js'></script>
+	</body>
+</html>
