@@ -40,7 +40,7 @@ class Booz
 		$conStr = sprintf("mysql:host=%s;dbname=%s", $host, $db);
 		//echo $conStr;
 		try {
-			$this->pdo = new PDO($conStr, $user, $pass);
+			$this->pdo = new PDO($conStr, 'cis', 'password');
 		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
