@@ -112,12 +112,6 @@ a {
 	clear:both;
 }
 
-#OkBtn{
-	position: absolute;
-	top:60%;
-	left:70%;
-	margin: 2% 0% 0% 0%;
-}
 
 .distWrapper {
 	position: fixed;
@@ -298,16 +292,25 @@ tbody tr:nth-child(even) {
 
 .testResult{
 	position:absolute;
-	top:30%;
+	top:10%;
 	left:5%;
+	font-size:9pt;
 	opacity: 100%;
 	height:auto;
-	width:60%;
+	width:35%;
 	padding:2% 2% 5% 2%;
 	z-index: 7;
 	background-color:#005c99;
 	color:#ffffff;
 	border:solid #003c66 3px;
+}
+
+#OkBtn{
+	position: absolute;
+	top:83%;
+	left:75%;
+	padding:4%;
+	margin: 0% 0% 0% 0%;
 }
 
 .outOfStock ul{
@@ -316,13 +319,15 @@ tbody tr:nth-child(even) {
 
 #InvoiceTotal{
 	position: absolute;
-	top:25%;
+	top:5%;
 	left:75%;
+	font-size:12pt;
 }
 #totalLbl{
 	position: absolute;
-	top:15%;
+	top:3%;
 	left:75%;
+	font-size:12pt;
 
 }
 .typeWrapper .typeList .type:hover {
