@@ -1,14 +1,5 @@
 class Item_Row {
-    constructor(
-        i_name,
-        i_dist,
-        i_type,
-        i_par,
-        d_order_type,
-        d_order_quantity,
-        default_order,
-        on_hand
-    ) {
+    constructor(i_name, i_dist, i_type, i_par, d_order_type, d_order_quantity, default_order, on_hand) {
         this.i_name = i_name;
         this.i_dist = i_dist;
         this.i_type = i_type;
